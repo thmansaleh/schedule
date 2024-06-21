@@ -15,13 +15,15 @@ export default function ShiftTable({shiftOffId,driverData,dutyId,name,time}) {
         ...driver,
         isAvilable:true
       }))
-
+      // driver.status=='true' &&driver.duty_id==dutyId&&driver.shift_id!=shiftOffId
+      const filterDrivers=updateDrivers.filter(driver=>driver.status=='true' & driver.duty_id==dutyId & driver.shift_id!=shiftOffId  )
+//  console.log('fil',filterDrivers)
       const updateCars=cars.map(car=>({
         ...car,
         drivers:[]
       }))
     
-      setDrivers(updateDrivers)
+      setDrivers(filterDrivers)
       setCars(updateCars)
     }
     fetchD()
@@ -135,7 +137,7 @@ return array.sort(()=>Math.random() - 0.5)
               <option></option>
            {drivers.map((e,i)=>{
            
-            if(e.status=='true' && e.isAvilable&&e.duty_id==dutyId&&e.shift_id!=shiftOffId) return <option key={i} value={i}>{e.name}</option>
+            if(e.isAvilable) return <option key={i} value={i}>{e.name}</option>
            
           })}
           </select>

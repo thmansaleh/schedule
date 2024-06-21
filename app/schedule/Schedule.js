@@ -4,7 +4,6 @@ import Admins from "./Admins";
 // import Header from "./Header";
 import Operations from "./Operations";
 import  Save from  "./Save"
-import Rta from "./Rta"
 
 import Holiday from "./Holiday"
 
@@ -14,7 +13,6 @@ import { swrDrivers } from "../swr/drivers";
 import ShiftTable from "./ShiftTable";
 import Header from "./Header";
 import Tools from "./Tools";
-
 export default  function Schedule(){
   const {data,error,isLoading} =    swrDrivers()
 
@@ -61,13 +59,16 @@ if(error) return 'eroor............'
    shiftOffId={shiftOffId}
    name='الفترة الليلية'
    />
+   <Operations workPlace='police' title='أفراد عمليات الشرطة' className='relative bg-green-500 text-white  overflow-x-auto'/>
+<Operations workPlace='rta' title='أفراد عمليات RTA' className='relative bg-red-500 text-white  overflow-x-auto'/>
+   <Admins/>
+
    <Holiday shiftOffId={shiftOffId}/> 
+
+
 
 {/* 
 
-<Operations/>
-<Rta/>
-<Admins/>
 <Holiday shiftOffId={shiftOffId}/> */}
 
     </div>
