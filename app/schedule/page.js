@@ -1,0 +1,16 @@
+export const viewport ={
+width:'800'
+}
+
+import { redirect } from 'next/navigation'
+import Content from "./Content"
+import { cookies } from 'next/headers'
+
+export default function(){
+
+  const cookieStore = cookies()
+    const user = cookieStore.get('user')
+    if(!user) return redirect("/login")
+
+return <Content/>
+}
