@@ -60,7 +60,7 @@ setTimeout(() => {
 
 })
 randoms.forEach(random => {  
-random.style.display="inline-block"
+random.style.display="block"
   }
 )
 savRef.current.innerText='تحميل الجدول'
