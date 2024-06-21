@@ -56,11 +56,11 @@ html2pdf().set(opt).from(element).save();
 
 
 setTimeout(() => {
-  deleteBtn.forEach(btn => {  btn.style.display='block'
+  deleteBtn.forEach(btn => {  btn.style.display='inline-block'
 
 })
 randoms.forEach(random => {  
-random.style.display="block"
+random.style.display="inline-block"
   }
 )
 savRef.current.innerText='تحميل الجدول'
