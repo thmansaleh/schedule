@@ -49,17 +49,17 @@ loading.current.style.display='flex'
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
     <div className="w-full bg-white rounded-lg shadow ">
       <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-        <h1  className="text-md text-center font-bold leading-tight tracking-tight text-gray-900  mb-4">
+        <h1  className="text-md text-center font-bold leading-tight tracking-tight text-gray-900  mb-6">
        وحدة إدارة  الحوادث المرورية 
         </h1>
 
           <div>
             <label htmlFor="email" className="block mb-2 text-sm f text-gray-900 ">اسم المستخدم</label>
-            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600" placeholder="username" required />
+            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600" placeholder="" required />
           </div>
           <div>
             <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">كلمة المرور</label>
-            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600 rounded-lg" required />
+            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="password" id="password" placeholder="" className="bg-gray-50 border border-gray-300 text-gray-900  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600 rounded-lg" required />
           </div>
 
 
