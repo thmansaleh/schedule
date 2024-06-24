@@ -145,7 +145,7 @@ theme="light"
         driver.status=e.target.value
         setDriver((driver)=>({...driver,status:e.target.value}))      }}
        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-       {[{name:"فعال":,value:"true"},name:"غير فعال":,value:"false"}].map((e,i)=>{
+       {[{name:"فعال",value:"true"},name:"غير فعال",value:"false"}].map((e,i)=>{
         if(driver.status==e.value){
           return  <option selected value={e.value}>{e.name}</option>
         }else{ return <option  value={e.value}>{e.name}</option>
