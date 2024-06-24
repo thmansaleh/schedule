@@ -105,6 +105,7 @@ return <tr key={i} className="border-b ">
         </th>
         <td className="px-6 py-4">
           {e.duty}
+{e.status=="false"&&<span>8jfufiuf</span>}
         </td>
         <td className="px-6 py-4">
           {e.shift}
