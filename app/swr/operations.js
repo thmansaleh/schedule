@@ -11,7 +11,7 @@ export function operations(){
 
    return response.data;
  };
-const { data , error, isLoading } = useSWR(url, fetchProduct,{ refreshInterval: 100000 })
+const { data , error, isLoading } = useSWR(url, fetchProduct)
 return {
   data,
   isLoading,
