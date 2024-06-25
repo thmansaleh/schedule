@@ -14,11 +14,7 @@ const fetcher =async ()=>{
   return response.data
 }
  
-const { data , error, isLoading } = useSWR(url,fetcher,{
-  revalidateIfStale: false,
-  revalidateOnFocus: false,
-  revalidateOnReconnect: false
-})
+const { data , error, isLoading } = useSWR(url,fetcher)
 return {
   data,
   isLoading,
