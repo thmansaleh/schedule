@@ -7,8 +7,8 @@ const LogoutButton = () => {
     const router = useRouter()
 
      return (
-        <div onClick={()=>{
-
+        <div onClick={ async ()=>{
+await fetch("/api/logout")
 router.push("/login")
 }} className="fixed  gap-x-2 top-3 start-3 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
             <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
