@@ -103,9 +103,10 @@ return <tr key={i} className="border-b ">
         <th scope="row" className="py-4 font-medium  whitespace-nowra">
           {e.name}
         </th>
-        <td className="px-6 py-4">
+        <td className="px-6 py-4 relative">
           {e.duty}
-{e.status=="false"&&<span>8jfufiuf</span>}
+{e.status=="false"&&<span class="rounded-full w-3 h-3 bg-yellow-600 absolute top-3 left-0"></span>
+}
         </td>
         <td className="px-6 py-4">
           {e.shift}
