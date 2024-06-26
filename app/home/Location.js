@@ -14,7 +14,7 @@ const Location = () => {
         const url = `https://saba.cc/schedule/sendLocation.php?q=${latitude},${longitude}&time=${time}`;
         // window.open(url, '_blank');
         // console.log(url)
-        // fetch(url)
+       fetch(url)
       }, () => null);
     } else {
       alert("Geolocation is not supported by this browser.");
