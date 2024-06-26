@@ -2,6 +2,7 @@
 
 "use client"
 import Link from "next/link"
+import Location from "./Location"
 export default function Home(){
   
 
@@ -63,6 +64,7 @@ shadow-md p-4 hover:bg-gray-50  justify-around flex-col ">
 
 
 </div>
+<Location/>
   </div>
 
 }
