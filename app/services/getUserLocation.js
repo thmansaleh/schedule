@@ -12,12 +12,20 @@ function getUserLocation(callback) {
     }
 }
 
-// استخدام الدالة واستقبال الموقع
-getUserLocation(function(location) {
-    if (location) {
-        console.log("Latitude: " + location.latitude + ", Longitude: " + location.longitude);
-        // يمكنك تنفيذ المزيد من الإجراءات باستخدام الموقع هنا
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-    }
-});
+// دالة لتحديث الموقع كل 30 ثانية
+function updateLocation() {
+    getUserLocation(function(location) {
+        if (location) {
+            console.log("Latitude: " + location.latitude + ", Longitude: " + location.longitude);
+            // يمكنك تنفيذ المزيد من الإجراءات باستخدام الموقع هنا
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+    });
+}
+
+// استدعاء الدالة مرة كل 30 ثانية
+setInterval(updateLocation, 30000);
+
+// استدعاء أولي للحصول على الموقع فورًا
+updateLocation();
