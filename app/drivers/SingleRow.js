@@ -5,23 +5,23 @@ function SingleRow({driver,index}) {
   const url =`drivers/${driver.id}`
 
   return (
-    <tr key={index}>
-    <td>{index}</td>
-    <td className="p-5 bg-white text-sm text-gray-900 whitespace-no-wrap border-b border-gray-200">
+    <tr  key={index}>
+    <td className='bg-white border-b border-gray-200 text-xs'>{index}</td>
+    <td className=" py-3  bg-white text-xs text-gray-900 whitespace-no-wrap border-b border-gray-200">
       <Link prefetch={true} href={url}>
       {driver.name}
       </Link>
    
     </td>
-    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <td className=" border-b border-gray-200 bg-white text-xs">
       <p className="text-gray-900 whitespace-no-wrap">{driver.shift}</p>
     </td>
-    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <td className=" border-b border-gray-200 bg-white text-xs">
       <p className="text-gray-900 whitespace-no-wrap">
         {driver.duty}
       </p>
     </td>
-    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <td className=" border-b border-gray-200 bg-white text-xs">
      {driver.status=='true'? <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
         <span aria-hidden className="absolute inset-0 bg-green-200 opacity-50 rounded-full" />
         <span className="relative">فعال</span>
