@@ -11,11 +11,14 @@ drivers:[]
     setCurrentDrivers: (state, action) => {
       state.currentDrivers=action.payload;
       state.drivers=action.payload;
-    }
+    },
+    setNewDrivers: (state, action) => {
+      state.drivers=action.payload;
+    },
 
   },
 });
 
-export const { setCurrentDrivers } = drivers.actions;
+export const { setCurrentDrivers,setNewDrivers } = drivers.actions;
 
 export default drivers.reducer;

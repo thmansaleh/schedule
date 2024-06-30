@@ -1,14 +1,17 @@
 "use client"
 import Link from  "next/link"
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setCurrentDrivers } from "../store/features/drivers";
 
 export default function Table({drivers}){
-  
+  const dispatch=useDispatch()
   const [data,setData]=useState([])
   const [serachdrivers,setSeaarch]=useState([])
   useEffect(()=>{
+    dispatch(setCurrentDrivers(drivers))
     setData(drivers)
     setSeaarch(drivers)
 
