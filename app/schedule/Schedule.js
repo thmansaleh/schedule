@@ -67,9 +67,6 @@ if(error) return 'eroor............'
 
 
 
-{/* 
-
-<Holiday shiftOffId={shiftOffId}/> */}
 
     </div>
 <Save  />
