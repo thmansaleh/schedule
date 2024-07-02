@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {driverDetails} from "@/app/services/driverDetails"
+import Nav from "./Nav"
 import {duty} from "@/app/services/duty"
 import { login } from "@/app/services/login"
 import { shifts }  from "@/app/services/shifts"
