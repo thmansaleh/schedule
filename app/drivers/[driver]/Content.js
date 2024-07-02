@@ -115,6 +115,7 @@ theme="light"
 
 
   </div>
+<Nav/>
   <div className="p-4 space-y-4">
 
 
