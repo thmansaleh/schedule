@@ -23,7 +23,7 @@ export default function Table({drivers}){
     <div>
       <h2 className="text-xl font-semibold leading-tight text-center my-4">  خبراء السير </h2>
     </div>
-    <div className="my-2 bg-white sticky top-0 flex sm:flex-row flex-col z-50">
+    <div className="my-2 bg-white py-3 sticky top-0 flex sm:flex-row flex-col z-50">
    <Filter/>
 
 
