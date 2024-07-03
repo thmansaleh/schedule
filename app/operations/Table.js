@@ -2,8 +2,8 @@
 
 export default function Table({operations}){
 return <div className="relative  overflow-x-auto shadow-md sm:rounded-lg">
-  <table className="text-center  w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-    <thead className="text-center  text-base text-gray-700 uppercase bg-gray-50 ">
+  <table className="text-center  w-full text-sm  rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead className="text-center  bg-gray-300 text-gray-700 uppercase ">
 <tr>
         <th scope="col" className="p-3 font-semibold">
        #
@@ -28,9 +28,13 @@ return <tr key={i} className="border-b ">
           {i+1}
         </th>
         <th scope="row" className="px-6 py-4 font-medium  whitespace-nowra">
-          {e.name}
+        <div className="flex items-center gap-x-2">
+          <span className="text-sm text-gray-600">{e.name}</span>
+        <img className="w-7 h-7 object-contain" src={e.work_place==='rta'?"./rta.png":'./dp.png'}/>
+
+        </div>
         </th>
-        <td className="px-6 py-4">
+        <td className="px-6 text-sm text-gray-600 py-4">
           {e.phone}
         </td>
       </tr>

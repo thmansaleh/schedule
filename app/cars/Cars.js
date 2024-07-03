@@ -2,13 +2,13 @@
 export default function Cars({cars}){
 return <>
 <div className="w-full flex items-center justify-between px-4">
-  <img className="w-28 h-28 object-contain" src="https://res.cloudinary.com/dys7kshe4/images/c_scale,w_448,h_287,dpr_2/f_auto,q_60/v1671950793/RTA-Approval-vehicle-advertising-dubai-3/RTA-Approval-vehicle-advertising-dubai-3.jpg?_i=AA" alt="ggg" />
-  <img className="w-28 h-16 object-contain" src="https://seeklogo.com/images/D/dubai-police-logo-F263188BEE-seeklogo.com.png" alt="ggg" />
+  <img className="w-28 h-28 object-contain" src="./rta.png" alt="ggg" />
+  <img className="w-28 h-16 object-contain" src="./DP.png" alt="ggg" />
 </div>
 
 
 <div className="relative  overflow-x-auto shadow-md sm:rounded-lg">
-  <table className="text-center  w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+  <table className="text-center  w-full text-sm  rtl:text-right text-gray-500 dark:text-gray-400">
     <thead className="text-center  text-base text-gray-700 uppercase bg-gray-50 ">
 <tr>
         <th scope="col" className="px-6 py-3">
