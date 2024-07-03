@@ -72,7 +72,7 @@ theme="light"
         <DialogHeader>اضافة ملاحظة جديدة</DialogHeader>
         <DialogBody>
 <div className="py-4">
-<textarea className="w-full rounded-lg ring-2 ring-gray-400 h-24 outline-none p-2"  />
+<textarea value={note} onChange={(e)=>setNote(e.target.value)} className="w-full rounded-lg ring-2 ring-gray-400 h-24 outline-none p-2"  />
 
     </div>      
       </DialogBody>
