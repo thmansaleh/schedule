@@ -30,7 +30,7 @@ return <tr key={i} className="border-b ">
         <th scope="row" className="px-6 py-4 font-medium  whitespace-nowra">
         <div className="flex items-center gap-x-2">
           <span className="text-sm text-gray-600">{e.name}</span>
-        <img className="w-7 h-7 object-contain" src={e.work_place==='rta'?"./rta.png":'./dp.png'}/>
+        <img className="w-7 h-7 object-contain" src={e.work_place==='rta'?"./rta.png":'./DP.png'}/>
 
         </div>
         </th>
