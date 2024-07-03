@@ -5,11 +5,12 @@ function Notes({userId}) {
     const {data,error,isLoading} = swrNotes(userId)
     if(isLoading) return <h1 className='text-md text-gray-600 mt-8 text-center ' >جاري التحميل</h1>
     if(error) return 'error.....'
+    if(data.length===0) return <h1 className='text-md text-gray-600 mt-8 text-center ' >لاتوجد اي ملاحظات</h1>
 
   return (
     <div className="p-3 bg-white space-y-4">
 
-    {data.map((e,i)=>{
+    {data.reverse().map((e,i)=>{
         return <div key={i} className="rounded-lg p-2 py-5  shadow-md relative overflow-hidden">
         <p className="text-sm text-gray-500">{e.note} </p>
     

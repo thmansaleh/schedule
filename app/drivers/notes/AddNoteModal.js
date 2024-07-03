@@ -72,7 +72,7 @@ theme="light"
         <DialogHeader>اضافة ملاحظة جديدة</DialogHeader>
         <DialogBody>
 <div className="py-4">
-<Textarea label="الملاحظة"  value={note} onChange={(e)=>setNote(e.target.value)}/>
+<textarea className="w-full rounded-lg ring-2 ring-gray-400 h-24 outline-none p-2"  />
 
     </div>      
       </DialogBody>
@@ -81,11 +81,11 @@ theme="light"
             variant="text"
             color="red"
             onClick={handleOpen}
-            className="mr-1"
+            className="mx-3"
           >
             <span>الغاء</span>
           </Button>
-          <Button variant="gradient" color="green" onClick={save}>
+          <Button className="bg-green-600 text-white" variant="gradient" color="green" onClick={save}>
             <span>حفظ</span>
           </Button>
         </DialogFooter>
