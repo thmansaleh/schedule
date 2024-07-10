@@ -2,8 +2,8 @@
 import Link from "next/link"
 export default function Nav({userId}){
   const noteUrl=`./notes?user_id=${userId}`
+  const cartToolsUrl=`./car-tools?user_id=${userId}`
   const reportsUrl=`./reports?user_id=${userId}`
-  const cartToolsUrl=`./notes?user_id=${userId}`
   return <div className="p-2 rounded-lg  flex items-center bg-white md:justify-around justify-around ">
   <Link href={reportsUrl} className="flex items-center flex-col  justify-center rounded-lg bg-white p-2 gap-y-2 hover:bg-gray-100">
     <svg className="w-7 h-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width={512} height={512}>

@@ -11,7 +11,7 @@ function Notes({userId}) {
     <div className="p-3 bg-white space-y-4">
 
     {data.reverse().map((e,i)=>{
-        return <div key={i} className="rounded-lg p-2 py-5  shadow-md relative overflow-hidden">
+        return <div key={i} className="rounded-lg p-2 py-5  border-b relative overflow-hidden">
         <p className="text-sm text-gray-500">{e.note} </p>
     
         <span className="absolute px-1.5  rounded-tl-lg bottom-0 right-0 bg-yellow-600 text-white  text-xs">{e.date}</span>
