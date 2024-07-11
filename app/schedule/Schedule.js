@@ -13,6 +13,7 @@ import { swrDrivers } from "../swr/drivers";
 import ShiftTable from "./ShiftTable";
 import Header from "./Header";
 import Tools from "./Tools";
+import Notes from "./Notes";
 export default  function Schedule(){
   const {data,error,isLoading} =    swrDrivers()
 
@@ -63,7 +64,8 @@ if(error) return 'eroor............'
 <Operations workPlace='rta' title='أفراد عمليات RTA' className='relative bg-red-500 text-white  overflow-x-auto'/>
    <Admins/>
 
-   <Holiday shiftOffId={shiftOffId}/> 
+   <Holiday shiftOffId={shiftOffId}/>
+   <Notes/> 
 
 
 

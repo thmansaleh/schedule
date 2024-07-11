@@ -52,7 +52,7 @@ return ()=>{
 
   return (
 
-  <div className="relative flex items-center justify-center w-full py-4 ">
+  <div className="relative flex items-center justify-center w-full py-4  ">
   
     <div className="absolute  w-full h-px bg-gray-700"></div>
   
@@ -60,7 +60,7 @@ return ()=>{
     <div className="relative px-4  text-gray-700 font-semibold ">
       
       
-    <select className=" outline-none  appearance-none" id="dateSelect">
+    <select className=" outline-none border-none ring-0  appearance-none" id="dateSelect">
       
     </select>
     </div>
