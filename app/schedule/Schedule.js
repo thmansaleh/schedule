@@ -42,14 +42,14 @@ if(error) return 'eroor............'
 <ShiftTable
  driverData={data}
   dutyId='1'
-  time='من 5 الى 1'
+  time='من 5 الى 13'
    shiftOffId={shiftOffId}
    name='الفترة الصباحية'
    />
 <ShiftTable
  driverData={data}
   dutyId='2'
-  time='من 1 الى 21'
+  time='من 13 الى 21'
    shiftOffId={shiftOffId}
    name='الفترة المسائية'
    />
