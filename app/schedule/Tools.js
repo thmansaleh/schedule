@@ -56,20 +56,20 @@ function Tools() {
 
 
     return (
-        <div id="tools" className="p-2 flex gap-4 items-center flex-wrap ">
-            <div className="flex gap-2 items-center">
-                <input id="phons" defaultChecked onChange={e => showDriversNo(e)} type="checkbox" />
-                <label htmlFor="phons" >اظهار ارقام هواتف خبراء السير</label>
-            </div>
-            <div  className="flex gap-2 items-center">
-                <input id='borders' defaultChecked onChange={e => showBorders(e)}  type="checkbox" />
-                <label htmlFor="borders" >اظهار حدود بين كل مستخدم</label>
-            </div>
-            <div  className="flex gap-2 items-center">
-                <input id="color" onChange={e => changeColor(e)}  type="color" />
-                <label  htmlFor="color">لون خط جدول خبراء السير فقط</label>
-            </div>
-        </div>
+        <div id="tools" className="p-4  space-y-4  ">
+    <div className="flex gap-2 items-center">
+        <input id="phons" defaultChecked onChange={e => showDriversNo(e)} type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
+        <label htmlFor="phons" className="ml-2 text-sm text-gray-700">اظهار ارقام هواتف خبراء السير</label>
+    </div>
+    <div className="flex gap-2 items-center">
+        <input id='borders' defaultChecked onChange={e => showBorders(e)} type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
+        <label htmlFor="borders" className="ml-2 text-sm text-gray-700">اظهار حدود بين كل مستخدم</label>
+    </div>
+    <div className="flex gap-2 items-center">
+        <input id="color" onChange={e => changeColor(e)} type="color" className="form-input h-8 w-8 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+        <label htmlFor="color" className="ml-2 text-sm text-gray-700">لون خط جدول خبراء السير فقط</label>
+    </div>
+</div>
     )
 }
 

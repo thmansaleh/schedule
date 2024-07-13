@@ -5,7 +5,8 @@ const drivers= createSlice({
   name: 'drivers',
   initialState: {
 currentDrivers:[],
-drivers:[]
+drivers:[],
+scheduleDate:''
 },
   reducers: {
     setCurrentDrivers: (state, action) => {
@@ -15,10 +16,13 @@ drivers:[]
     setNewDrivers: (state, action) => {
       state.drivers=action.payload;
     },
+    setScheduleDate: (state, action) => {
+      state.scheduleDate=action.payload;
+    },
 
   },
 });
 
-export const { setCurrentDrivers,setNewDrivers } = drivers.actions;
+export const { setCurrentDrivers,setNewDrivers ,setScheduleDate} = drivers.actions;
 
 export default drivers.reducer;

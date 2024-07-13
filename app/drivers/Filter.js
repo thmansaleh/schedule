@@ -16,36 +16,36 @@ function Filter() {
 
         switch (value) {
             case 'morning':
-
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '1')))
+                // sort((a, b) => a.name.localeCompare(b.name, 'ar')).
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '1').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
 
                 break;
             case 'evening':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '2')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '2').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
             case 'night':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '3')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.duty_id == '3').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
             case '1':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '1')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '1').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
             case '2':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '2')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '2').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
             case '3':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '3')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '3').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
             case '4':
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '4')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.shift_id == '4').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
                 break;
                 case 'true':
 
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.status == 'true')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.status == 'true').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
 
                 break;
                 case 'false':
 
-                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.status == 'false')))
+                dispatch(setNewDrivers(currentDrivers.filter(driver => driver.status == 'false').sort((a, b) => a.name.localeCompare(b.name, 'ar'))))
 
                 break;
 
@@ -56,16 +56,10 @@ function Filter() {
         }
     }
     return (
-        <div className="flex flex-row mb-1 sm:mb-0">
-            <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                </div>
-            </div>
-            <div className="relative">
-                <select onChange={(e) => search(e)} className="appearance-none h-full rounded border   block  w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+        <div className="flex flex-row mb-1  sm:mb-0">
+          
+            <div className="relative ">
+                <select onChange={(e) => search(e)} className="appearance-none h-full rounded border outline-none   block  w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l  focus:border-r focus:bg-white focus:border-gray-500">
                     <option value='all'>الكل</option>
                     {/* <option value='true'>فعال</option> */}
                     <option value='morning'>الفترة الصباحية</option>
@@ -79,11 +73,7 @@ function Filter() {
 
                 
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                </div>
+            
             </div>
         </div>
     )
