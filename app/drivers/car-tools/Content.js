@@ -1,9 +1,10 @@
 
 'use client'
+import { date } from "@/app/services/date";
 import { getDriverCars } from "@/app/services/getDriverCars";
 import { Button, Datepicker } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Content() {
   const userId=useSearchParams().get('user_id')
@@ -11,6 +12,15 @@ export default function Content() {
   const [start,setStart]=useState(false)
   const [end,setEnd]=useState(false)
 
+useEffect(() => {
+  
+  console.log(date())
+  setStart(date())
+  setEnd(date())
+  return () => {
+    
+  }
+}, [])
 
   const getCars= async()=>{
    const data= await getDriverCars(userId,start,end)
