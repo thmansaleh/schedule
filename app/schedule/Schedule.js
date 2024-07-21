@@ -1,31 +1,30 @@
 "use client"
 
 import Admins from "./Admins";
-// import Header from "./Header";
 import Operations from "./Operations";
 import  Save from  "./Save"
 
 import Holiday from "./Holiday"
 
 import { useSearchParams } from 'next/navigation'
-// import { useEffect, useState } from "react";
 import { swrDrivers } from "../swr/drivers";
 import ShiftTable from "./ShiftTable";
 import Header from "./Header";
-import Tools from "./Tools";
 import Notes from "./Notes";
+import { Spinner } from "flowbite-react";
 export default  function Schedule(){
   const {data,error,isLoading} =    swrDrivers()
-
-
-  // const [drivers,setDrivers]=useState([])
   const searchParams = useSearchParams()
   const shiftOffId = searchParams.get('shift-off-id')
 
 
      
 
-if(isLoading) return 'loading............'
+if(isLoading) return <div className="fixed flex items-center justify-center gap-x-4 inset-0">
+  <h1 className="text-md font-semibold text-gray-700 text-center">جاري التحميل </h1>
+  <Spinner color="success" aria-label="Success spinner example" />
+
+  </div>
 if(error) return 'eroor............'
       return <>
 
@@ -33,7 +32,6 @@ if(error) return 'eroor............'
     <div id="schedule">
 
 
-    <Tools/>
 
 <Header/>
 

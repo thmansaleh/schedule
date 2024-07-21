@@ -1,8 +1,7 @@
 'use client'
-import {useEffect} from "react"
 import { useSelector } from "react-redux"
 function Header() {
-  const date =useSelector(state=>state.drivers.scheduleDate)
+  const date =useSelector(state=>state.schedule.date)
 
   return (
 

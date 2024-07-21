@@ -1,12 +1,14 @@
 'use client'
 import { useState, useEffect } from "react"
 import { fetchCars } from "../services/cars"
+import { useSelector } from "react-redux"
 
 export default function ShiftTable({shiftOffId,driverData,dutyId,name,time}) {
   const [drivers, setDrivers] = useState([])
   const [cars, setCars] = useState([])
-
-
+  const phones=useSelector(state=> state.schedule.phones)
+  const borders=useSelector(state=> state.schedule.borders)
+  const color=useSelector(state=> state.schedule.color)
 
   useEffect(() => {
     const fetchD = async () => {
@@ -15,9 +17,7 @@ export default function ShiftTable({shiftOffId,driverData,dutyId,name,time}) {
         ...driver,
         isAvilable:true
       }))
-      // driver.status=='true' &&driver.duty_id==dutyId&&driver.shift_id!=shiftOffId
       const filterDrivers=updateDrivers.filter(driver=>driver.status=='true' & driver.duty_id==dutyId & driver.shift_id!=shiftOffId  )
-//  console.log('fil',filterDrivers)
       const updateCars=cars.map(car=>({
         ...car,
         drivers:[]
@@ -45,7 +45,6 @@ export default function ShiftTable({shiftOffId,driverData,dutyId,name,time}) {
 
 cars[carIndex].drivers.map(e=>{
 e.isAvilable=true
-// drivers.push(e)
 })
 setDrivers([...drivers])
   cars[carIndex].drivers=[]
@@ -76,7 +75,6 @@ return array.sort(()=>Math.random() - 0.5)
         });
         setCars([...cars])
       
-      // console.log(mynew)
   
   
 
@@ -117,17 +115,17 @@ return array.sort(()=>Math.random() - 0.5)
           <th scope="col" className="px-6 py-3">
             التمركز
           </th>
-          <th scope="col"  className="driverPhone text px-6 py-3">
+          {phones&& <th scope="col"  className="driverPhone text px-6 py-3">
             رقم الهاتف
-          </th>
+          </th>}
           <th scope="col" className="text px-6 py-3">
             
           </th>
         </tr>
       </thead>
-      <tbody className="text-md">
+      <tbody style={{color:color?color:'black'}} className="text-md">
         {cars.map((e,carIndex)=>{
-         if(e.name!='5') return <tr key={carIndex} className="text-center showBorders  border border-black py-7  ">
+         if(e.name!='5') return <tr key={carIndex} className={borders?' border border-black text-center py-7':'text-center py-7'} >
           <th scope="row" className=" relative
           px-6   font-medium  whitespace-nowrap  py-2">
           {e.drivers.map((e,i)=>{
@@ -148,13 +146,13 @@ return array.sort(()=>Math.random() - 0.5)
           <th scope="row" className="px-6  py-2 text-sm  whitespace-nowrap text">
             {e.station}
           </th>
-          <th scope="row"  className="px-6 driverPhone py-2  text-sm  whitespace-nowrap ">
+        {phones&&  <th scope="row"  className="px-6 driverPhone py-2  text-sm  whitespace-nowrap ">
             {e.drivers.map((e,i)=>{
-              return <div className="block"  key={i}>{e.phone}</div>
+              return <div className='block' key={i}>{e.phone}</div>
             })}
 
            
-          </th>
+          </th>}
           <th scope="row" onClick={()=>empty(carIndex)} className="text-red-500 delete-btn px-4   font-medium select-none whitespace-nowrap ">
   افراغ
           </th>

@@ -13,7 +13,6 @@ if(isLoading) return <h1 className="text-center mt-8">جاري التحميل...
 if(error) return <h1>error</h1>
 
 if(data) return <>
-<BackArrowBtn/>
 <Table drivers={data} />
 </>
 // if(data) return <Test drivers={data} />
