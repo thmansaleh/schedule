@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 function SingleRow({driver,index}) {
-  const url =`drivers/${driver.id}`
+  const url =`drivers/${driver.job_id}`
 
   return (
     <tr  key={index}>
