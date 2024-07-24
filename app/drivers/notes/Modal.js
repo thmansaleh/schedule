@@ -15,7 +15,7 @@ export default function ModalC({userId}) {
     const [note, setNote] = useState('');
     const {data} = swrNotes(userId)
 
-    const save = () => {
+    const save = async() => {
       
               if (note.length>4) {
                 mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`,[...data,{
@@ -24,10 +24,9 @@ export default function ModalC({userId}) {
                   note:note,
                   date: ""
               }])
-                console.log(data)
                
                 
-                addNote(userId,note)
+               await addNote(userId,note)
                 mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`)
 
                 toast.success('تم اضافة الملاحظة بنجاح', {

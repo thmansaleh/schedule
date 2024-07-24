@@ -18,11 +18,8 @@ export default function DeleteNote({noteId,userId}) {
       
        
                 mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`,data.filter(note=>  note.id!=noteId))
-                console.log(data)
-               
                 
-             const dele =await   deleteNoteById(noteId)
-             console.log(dele)
+             await   deleteNoteById(noteId)
                 mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`)
 
                 toast.success('تم حذف الملاحظة بنجاح', {

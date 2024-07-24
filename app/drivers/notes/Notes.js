@@ -4,7 +4,6 @@ import DeleteNote from './DeleteNote'
 
 function Notes({userId}) {
     const {data,error,isLoading} = swrNotes(userId)
-    console.log(data)
     if(isLoading) return <h1 className='text-md text-gray-600 mt-8 text-center ' >جاري التحميل</h1>
     if(error) return 'error.....'
     if(data.length===0) return <h1 className='text-md text-gray-600 mt-8 text-center ' >لاتوجد اي ملاحظات</h1>
