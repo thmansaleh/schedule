@@ -1,6 +1,5 @@
 'use client'
 import { useSearchParams } from "next/navigation";
-// import { AddNoteModal } from "./AddNoteModal";
 import Notes from "./Notes";
 import Modal from "./Modal";
 

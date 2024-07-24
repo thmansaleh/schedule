@@ -1,30 +1,14 @@
 'use client'
 
-import { useRef } from "react";
+import { Spinner } from "flowbite-react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Save({}){
-  const savRef=useRef(null)
-  const today =()=>{
-    const today = new Date();
-    
-    
-    const tomorrow = new Date(today); 
-    tomorrow.setDate(today.getDate() + 1); 
-    const arabicWeekdays = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-    
-    const arabicWeekdayName = arabicWeekdays[tomorrow.getDay()];
-    return `جدول يوم ${arabicWeekdayName} ${tomorrow.toLocaleDateString()} `
-    
-        }
-
-
-
-
-
-
+  const today =useSelector(state=>state.schedule.date)
+  const [loading,setLoading]=useState(false)
 
     const save=()=>{
-      document.getElementById('tools').style.display='none'
 
 
 const randoms =document.querySelectorAll('.random')
@@ -33,8 +17,9 @@ random.style.display="none"
   }
 )
 
-      savRef.current.innerText='جاري التحميل .....'
-const texts = document.querySelectorAll('.text')
+      // savRef.current.innerText='جاري التحميل .....'
+      setLoading(true)
+      const texts = document.querySelectorAll('.text')
 const deleteBtn = document.querySelectorAll('.delete-btn')
   texts.forEach(text => {  text.innerHTML = text.innerText.replace(/\s/g, "\u00a0")
   })
@@ -43,14 +28,13 @@ const deleteBtn = document.querySelectorAll('.delete-btn')
           const element = document.getElementById('schedule');
           
 const opt = {
-margin: [0, 0, 0, 0],
-  filename:     `${today()}.pdf`,
+margin: [0.3, 0, 0.3, 0],
+  filename:     `جدول يوم ${today}.pdf`,
   image:        { type: 'jpeg', quality: 1 },
   html2canvas:  { scale: 2},
   jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
 };
 
-// New Promise-based usage:
 html2pdf().set(opt).from(element).save();
 
 
@@ -63,9 +47,7 @@ randoms.forEach(random => {
 random.style.display="inline-block"
   }
 )
-savRef.current.innerText='تحميل الجدول'
-document.getElementById('tools').style.display='block'
-
+setLoading(false)
 
 }, 5000);
 
@@ -73,7 +55,12 @@ document.getElementById('tools').style.display='block'
 
     return <>
 <div className="p-6">
-<button ref={savRef} className='w-full rounded-lg py-4 bg-green-600 text-white' onClick={()=>save()} >تحميل الجدول</button>
+<button  className='w-full rounded-lg py-4 bg-green-600 text-white' onClick={()=>save()} 
+>
+تحميل الجدول
+{loading&&<Spinner className="mx-4 " color="success" aria-label="Success spinner example" />
+}
+</button>
 
 </div>
         </>
