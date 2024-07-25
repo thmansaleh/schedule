@@ -29,6 +29,7 @@ export default function DeleteNote({noteId,userId}) {
                     closeOnClick: true,
                     pauseOnHover: true,
                     draggable: true,
+                    rtl:true,
                     progress: undefined,
                     theme: "light"
               });

@@ -1,6 +1,9 @@
+import BackArrowBtn from "../components/BackArrowBtn"
 
 export default function Cars({cars}){
 return <>
+<BackArrowBtn/>
+
 <div className="w-full flex items-center justify-between px-4">
   <img className="w-28 h-28 object-contain" src="./rta.png" alt="ggg" />
   <img className="w-28 h-16 object-contain" src="./DP.png" alt="ggg" />

@@ -3,8 +3,7 @@ import { useSelector } from "react-redux"
 function Header() {
   const date =useSelector(state=>state.schedule.date)
 
-  return (
-
+  return <>
   <div className="relative flex items-center justify-center w-full py-4  ">
   
     <div className="absolute  w-full h-px bg-gray-700"></div>
@@ -15,9 +14,10 @@ function Header() {
 
     </div>
   </div> 
+  </>
   
   
-)
+
 }
 
 export default Header

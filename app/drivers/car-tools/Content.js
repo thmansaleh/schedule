@@ -6,6 +6,7 @@ import { Button, Datepicker, Spinner } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import InformationModal from "./Modal";
+import BackArrowBtn from "@/app/components/BackArrowBtn";
 
 export default function Content() {
   const userId=useSearchParams().get('user_id')
@@ -40,7 +41,10 @@ useEffect(() => {
 setMassage(true)
   }
 }
-  return <div className="p-3 flex flex-col gap-y-4  ">
+  return <>
+  <BackArrowBtn/>
+
+  <div className="p-3 flex flex-col gap-y-4  ">
     <div className="flex items-center gap-x-4 justify-center">
       <div>من</div>
       <Datepicker                 onSelectedDateChanged={date=>setStart(date)}
@@ -58,7 +62,7 @@ setMassage(true)
     {massage&&<div className="text-center font-semibold text-gray-700">لا توجد اي بيانات</div> }
     {cars&&<div>
       {cars.map(e=>{
-
+        
         return <InformationModal data={e} />
       })}
       </div>   
@@ -69,5 +73,6 @@ setMassage(true)
   </div>
 
   
+    </>
 }
 

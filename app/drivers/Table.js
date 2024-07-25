@@ -6,7 +6,6 @@ import { setCurrentDrivers } from "../store/features/drivers";
 import SingleRow from "./SingleRow";
 import SearchInput from "./SearchInput";
 import Filter from "./Filter";
-import BackArrowBtn from "../components/BackArrowBtn";
 
 export default function Table({drivers}){
   const dispatch=useDispatch()
@@ -22,7 +21,6 @@ export default function Table({drivers}){
 <div className="container mx-auto px-4 sm:px-8">
   <div className="">
    
-    <BackArrowBtn/>
     <div className="my-2 bg-white py-3 sticky top-0 flex sm:flex-row flex-col z-50">
 
    <Filter/>

@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SelectDate from "./SelectDate";
 import Sittung from "./Sittung";
+import BackArrowBtn from "../components/BackArrowBtn";
 export default async function Page(){
   const router =useRouter()
 
@@ -34,6 +35,7 @@ const notify = () =>{
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
+    rtl:true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
@@ -55,6 +57,8 @@ pauseOnHover
 theme="light"
 
  />
+ <BackArrowBtn/>
+
  <div className=" text-center relative  w-full">
 <h1 className="text-center text-base text-black font-semibold select-none my-4">يرجى اختيار شفت النزول</h1>
   <div id="navs" className="   w-screen py-4 bg-white  flex items-center  justify-around ">

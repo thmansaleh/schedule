@@ -12,6 +12,7 @@ import ShiftTable from "./ShiftTable";
 import Header from "./Header";
 import Notes from "./Notes";
 import { Spinner } from "flowbite-react";
+import BackArrowBtn from "../components/BackArrowBtn";
 export default  function Schedule(){
   const {data,error,isLoading} =    swrDrivers()
   const searchParams = useSearchParams()
@@ -21,13 +22,14 @@ export default  function Schedule(){
      
 
 if(isLoading) return <div className="fixed flex items-center justify-center gap-x-4 inset-0">
-  <h1 className="text-md font-semibold text-gray-700 text-center">جاري التحميل </h1>
+  <h1 className="text-md font-semibold text-gray-700 text-center my-5">جاري التحميل </h1>
   <Spinner color="success" aria-label="Success spinner example" />
 
   </div>
-if(error) return 'eroor............'
+if(error) return 'error............'
       return <>
 
+<BackArrowBtn/>
 
     <div id="schedule">
 
