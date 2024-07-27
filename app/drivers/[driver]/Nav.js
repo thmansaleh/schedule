@@ -4,7 +4,7 @@ export default function Nav({userId}){
   const noteUrl=`./notes?user_id=${userId}`
   const cartToolsUrl=`./car-tools?user_id=${userId}`
   const reportsUrl=`./reports?user_id=${userId}`
-  return <div className="p-2 rounded-lg  flex items-center bg-white md:justify-around justify-around ">
+  return <div className="p-2 rounded-lg  flex items-center shadow-lg mx-3 md:justify-around justify-around ">
   <Link href={reportsUrl} className="flex items-center flex-col  justify-center rounded-lg bg-white p-2 gap-y-2 hover:bg-gray-100">
     <svg className="w-7 h-7 fill-gray-600" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width={512} height={512}>
       <path d="m21.5,0H7.5c-1.378,0-2.5,1.122-2.5,2.5v4.5H0v14c0,1.654,1.346,3,3,3h18c1.654,0,3-1.346,3-3V2.5c0-1.378-1.122-2.5-2.5-2.5ZM5,21c0,1.103-.897,2-2,2s-2-.897-2-2v-13h4v13Zm18,0c0,1.103-.897,2-2,2H5.234c.476-.531.766-1.232.766-2V2.5c0-.827.673-1.5,1.5-1.5h14c.827,0,1.5.673,1.5,1.5v18.5ZM15,7h6v1h-6v-1Zm-7,4h13v1h-13v-1Zm0,4h13v1h-13v-1Zm0,4h13v1h-13v-1ZM13,3h-5v5h5V3Zm-1,4h-3v-3h3v3Z" />

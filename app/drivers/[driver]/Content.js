@@ -36,7 +36,7 @@ return <>
 <BackArrowBtn/>
 
 
-<div className="py-4">
+<div className="py-4 bg-white">
 
   <Avatar driver={data[0]}/>
 
