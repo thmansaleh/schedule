@@ -6,5 +6,6 @@ export default  function page({params}) {
   const cookieStore = cookies()
     const user = cookieStore.get('user')
 if(!user) return redirect("/login")
-return <Content id={id}/>
+
+return <Content  id={id}/>
 }
