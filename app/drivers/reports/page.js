@@ -1,14 +1,8 @@
-import BackArrowBtn from "@/app/components/BackArrowBtn"
+"use client";
 import Content from "./Content"
 
 function page() {
-  return <>
-    <BackArrowBtn/>
-  <div className="text-gray-700 font-semibold text-center mt-8">
-
-    لم يتم ربط نظام الاحداث بعد
-  </div>
-  </>
+  return <Content/>  
 }
 
 export default page

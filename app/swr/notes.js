@@ -7,7 +7,7 @@ import useSWR from 'swr'
 
 export  function swrNotes(userId){
 
- const url =`https://saba.cc/schedule/notes.php?user_id=${userId}`
+ const url =`https://express-rta.vercel.app/get-notes-by-user-id?user_id=${userId}`
   
 const fetcher =async ()=>{
   const response = await axios.get(url)

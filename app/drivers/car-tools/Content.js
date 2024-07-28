@@ -43,6 +43,7 @@ setMassage(true)
 }
   return <>
   <BackArrowBtn/>
+  <h2 className="text-center  text-gray-700 font-semibold text-md my-4">سجلات التسليم</h2>
 
   <div className="p-3 flex flex-col gap-y-4  ">
     <div className="flex items-center gap-x-4 justify-center">

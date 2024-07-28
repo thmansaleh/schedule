@@ -15,18 +15,19 @@ export default function ModalC({userId}) {
     const {data} = swrNotes(userId)
 
     const save = async() => {
-      
+      const url =`https://express-rta.vercel.app/get-notes-by-user-id?user_id=${userId}`
+
               if (note.length>4) {
-                mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`,[...data,{
-                  id: "1555",
-                  user_id: "",
-                  note:note,
-                  date: ""
-              }])
+              //   mutate(url,[...data,{
+              //     id: "1555",
+              //     user_id: "",
+              //     note:note,
+              //     date: ""
+              // }])
                
                 
                await addNote(userId,note)
-                mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`)
+                mutate(url)
 
                 toast.success('تم اضافة الملاحظة بنجاح', {
                     position: "top-center",

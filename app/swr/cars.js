@@ -7,7 +7,8 @@ import useSWR from 'swr'
 
 export  function swrCars(){
 
- const url ="https://saba.cc/schedule/cars.php"
+ const url ="https://express-rta.vercel.app/get-cars"
+//  const url ="https://saba.cc/schedule/cars.php"
   
 const fetcher =async ()=>{
   const response = await axios.get(url)

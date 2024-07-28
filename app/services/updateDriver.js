@@ -13,7 +13,8 @@ import axios from 'axios';
 // }
  
  export const updateDriver = async (id,driver) => {
-const url =`https://saba.cc/schedule/update-driver.php?id=${id}&shiftId=${driver.shift}&dutyId=${driver.duty}&phone=${driver.phone}&name=${driver.name}&status=${driver.status}`
+const url =`https://express-rta.vercel.app/update-driver?id=${id}&shiftId=${driver.shift}&dutyId=${driver.duty}&phone=${driver.phone}&name=${driver.name}&status=${driver.status}`
+// const url =`https://saba.cc/schedule/update-driver.php?id=${id}&shiftId=${driver.shift}&dutyId=${driver.duty}&phone=${driver.phone}&name=${driver.name}&status=${driver.status}`
    const response = await axios.get(url);
 
    return response.data;

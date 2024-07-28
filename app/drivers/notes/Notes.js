@@ -6,9 +6,9 @@ function Notes({userId}) {
     const {data,error,isLoading} = swrNotes(userId)
     if(isLoading) return <h1 className='text-md text-gray-600 mt-8 text-center ' >جاري التحميل</h1>
     if(error) return 'error.....'
-    if(data.length===0) return <h1 className='text-md text-gray-600 mt-8 text-center ' >لاتوجد اي ملاحظات</h1>
+    // if(data.length===0) return <h1 className='text-md text-gray-600 mt-8 text-center ' >لاتوجد اي ملاحظات</h1>
 
-  return (
+    if(data)return (
     <div className="p-3 bg-gray-700 rounded-lg space-y-4 my-3">
 
     {data.reverse().map((e)=>{
@@ -21,6 +21,7 @@ function Notes({userId}) {
   
   
   </div>  )
+  return <h1 className='text-md text-gray-600 mt-8 text-center ' >لاتوجد اي ملاحظات</h1>
 }
 
 export default Notes

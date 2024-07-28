@@ -5,7 +5,8 @@ import axios from 'axios';
 import useSWR from 'swr'
 
 export function admins(){
- const url ="https://saba.cc/schedule/admins.php"
+ const url ="https://express-rta.vercel.app/get-admins"
+//  const url ="https://saba.cc/schedule/admins.php"
   const fetchProduct = async () => {
    const response = await axios.get(url);
 

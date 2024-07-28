@@ -17,10 +17,13 @@ export default function DeleteNote({noteId,userId}) {
     const save = async() => {
       
        
-                mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`,data.filter(note=>  note.id!=noteId))
+      const url =`https://express-rta.vercel.app/get-notes-by-user-id?user_id=${userId}`
+                mutate(url,data.filter(note=>  note.id!=noteId))
                 
              await   deleteNoteById(noteId)
-                mutate(`https://saba.cc/schedule/notes.php?user_id=${userId}`)
+
+                mutate(url)
+
 
                 toast.success('تم حذف الملاحظة بنجاح', {
                     position: "top-center",
