@@ -19,7 +19,6 @@ updateDriver:{
       switch (action.payload.action) {
         case 'name':
             state.updateDriver.name=action.payload.value
-            console.log(state.updateDriver.duty)
             break;
         case 'driver':
             state.updateDriver.name=action.payload.value.name
@@ -30,22 +29,18 @@ updateDriver:{
             break;
         case 'duty':
             state.updateDriver.duty=action.payload.value
-            console.log(state.updateDriver)
 
             break;
         case 'shift':
             state.updateDriver.shift=action.payload.value
-            console.log(state.updateDriver)
 
             break;
         case 'phone':
             state.updateDriver.phone=action.payload.value
-            console.log(state.updateDriver)
 
             break;
         case 'status':
             state.updateDriver.status=action.payload.value
-            console.log(state.updateDriver)
 
             break;
       

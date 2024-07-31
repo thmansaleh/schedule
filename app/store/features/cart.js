@@ -23,7 +23,6 @@ if(state.items.length>0){
 const exists = state.items.some(item => item.id === newItem.id);
 
 if (exists) {
-console.log("exists")
  
   
 } else {
@@ -35,7 +34,6 @@ console.log("exists")
 else{
 
 state.items.push(newItem);
-console.log(state.items)
 
 }
      

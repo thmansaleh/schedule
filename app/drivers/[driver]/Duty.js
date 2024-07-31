@@ -1,9 +1,11 @@
 import { updateDriver } from "@/app/store/features/driver";
+import { swrDriver } from "@/app/swr/driver";
 import { duty } from "@/app/swr/duty";
 import { useDispatch, useSelector } from "react-redux";
 
 function Duty() {
     const { data, isLoading, error } = duty();
+
     const dispatch = useDispatch();
     const driver = useSelector((state) => state.driver.updateDriver);
 
@@ -18,6 +20,7 @@ function Duty() {
 
             <select
                 onChange={(e) => {
+
                     dispatch(updateDriver({ action: "duty", value: e.target.value }));
                 }}
                 defaultValue={driver.duty}

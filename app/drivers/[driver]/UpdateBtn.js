@@ -1,20 +1,22 @@
 import { updateDriver } from '@/app/services/updateDriver'
+import { swrDriver } from '@/app/swr/driver';
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function UpdateBtn({driver}) {
+function UpdateBtn({driver,id}) {
+    const {mutate} =swrDriver(id)
+
     const data =useSelector(state=>state.driver.updateDriver)
-    console.log('orignal',driver)
-    console.log('upart',data)
 
 const update= async ()=>{
 
 const update = await updateDriver(driver.id,data)
+
 toast.success('تم التحديث بنجاح', {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -22,6 +24,10 @@ toast.success('تم التحديث بنجاح', {
       progress: undefined,
       theme: "light"
 });
+setTimeout(() => {
+    mutate()
+
+}, 3000);
 }
 
 

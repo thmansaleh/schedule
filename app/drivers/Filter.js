@@ -10,7 +10,6 @@ function Filter() {
 
 
         const value = inputValue.target.value
-        console.log(value)
         const newSearch = currentDrivers.filter(driver => driver.name.toLowerCase().includes(value.toLowerCase()) || driver.phone.toString().includes(value) || driver.job_id.toString().includes(value))
         // dispatch(setNewDrivers(newSearch))
 

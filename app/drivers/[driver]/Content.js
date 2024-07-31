@@ -47,9 +47,9 @@ return <>
 <Name driver={data[0]}/>
 <Active driver={data[0]}/>
  <Shift driver={data[0]}/>
-<Duty driver={data[0]}/>
+<Duty  driver={data[0]}/>
 <Phone driver={data[0]}/>
-    <UpdateBtn driver={data[0]}/>
+    <UpdateBtn id={id} driver={data[0]}/>
   </div>
 </div>
 </>

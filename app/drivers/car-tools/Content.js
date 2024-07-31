@@ -17,7 +17,6 @@ export default function Content() {
   const [end,setEnd]=useState(false)
 
 useEffect(() => {
-  console.log(date())
   setStart(date())
   setEnd(date())
   return () => {
@@ -27,10 +26,18 @@ useEffect(() => {
 
   const getCars= async()=>{
     setLoading(true)
-   const data= await getDriverCars(userId,start,end)
+    const startDateObj = new Date(start);
+    startDateObj.setDate(startDateObj.getDate() + 1);
+    const startDate=startDateObj.toISOString().split('T')[0] 
+    const endDateObj = new Date(end);
+    endDateObj.setDate(endDateObj.getDate() + 1);
+    const endtDate=endDateObj.toISOString().split('T')[0] 
+
+
+    console.log(startDate,endtDate)
+   const data= await getDriverCars(userId,startDate,endtDate)
    setLoading(false)
 
-   console.log(data)
   if(data) {
     setCars(data)
     setMassage(false)
