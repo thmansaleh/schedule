@@ -21,12 +21,15 @@ if(error) return 'errore'
         console.log(e.target.value)
          dispatch(updateDriver({action:'shift',value:e.target.value}))
 
-    }}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+    }} 
+    defaultValue={driver.shift}
+
+     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
      {
 data.map((e,i)=>{
 
 
-return <option  selected={e.id===driver.shift_id?true:false} key={i} value={e.id}>{e.name}</option>
+return <option  >{e.name}</option>
 })}
 
     </select>

@@ -4,7 +4,7 @@ import Table from "./Table"
 import { swrDrivers} from "@/app/swr/drivers"
 import BackArrowBtn from "../components/BackArrowBtn"
 
-export default async function Content(){
+export default  function Content(){
 
 const {data,error,isLoading} = swrDrivers()
 
@@ -13,7 +13,7 @@ if(error) return <h1>error</h1>
 
 if(data) return <>
 <BackArrowBtn/>
-<Table drivers={data} />
+<Table drivers={data.sort((a, b) => a.name.localeCompare(b.name, 'ar'))} />
 </>
 // if(data) return <Test drivers={data} />
 

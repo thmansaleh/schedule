@@ -56,7 +56,7 @@ export default function Table({drivers}){
           <tbody>
 
             {currentDrivers.map((driver,index)=>{
-                return      <SingleRow index={index+1} driver={driver}/>
+                return      <SingleRow key={driver.job_id} index={index+1} driver={driver}/>
 
             })}
 

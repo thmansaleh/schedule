@@ -7,7 +7,7 @@ function Avatar({driver}) {
 
 
 
-<div class="py-2 text-sm text-center text-gray-700">الرقم المالي : <span class="text-green-600 font-semibold">{driver.jobId}</span></div>
+<div className="py-2 text-sm text-center text-gray-700">الرقم المالي : <span className="text-green-600 font-semibold">{driver.jobId}</span></div>
 
 
 

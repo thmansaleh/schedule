@@ -20,11 +20,11 @@ function Duty() {
                 onChange={(e) => {
                     dispatch(updateDriver({ action: "duty", value: e.target.value }));
                 }}
-                defaultValue={driver.duty_id}
+                defaultValue={driver.duty}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             >
                 {data.map((e) => (
-                    <option key={e.id} value={e.id}>
+                    <option  key={e.id} value={e.id}>
                         {e.name}
                     </option>
                 ))}
