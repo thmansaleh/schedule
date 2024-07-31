@@ -13,7 +13,7 @@ if(error) return <h1>error</h1>
 
 if(data) return <>
 <BackArrowBtn/>
-<Table drivers={data.sort((a, b) => a.name.localeCompare(b.name, 'ar'))} />
+<Table drivers={data} />
 </>
 // if(data) return <Test drivers={data} />
 

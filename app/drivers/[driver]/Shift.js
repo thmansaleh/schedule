@@ -29,7 +29,7 @@ if(error) return 'errore'
 data.map((e,i)=>{
 
 
-return <option  >{e.name}</option>
+return <option key={i}  >{e.name}</option>
 })}
 
     </select>
