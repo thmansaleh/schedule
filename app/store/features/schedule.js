@@ -27,7 +27,7 @@ const schedule= createSlice({
         case 'color':
             state.color=action.payload.data
             break;
-      
+   
         default:
             break;
       }

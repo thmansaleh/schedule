@@ -27,6 +27,7 @@ export default function ShiftTable({shiftOffId,driverData,dutyId,name,time}) {
       setCars(updateCars)
     }
     fetchD()
+
     return () => {
 
     }
