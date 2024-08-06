@@ -1,10 +1,8 @@
 "use client"
 
 import { useDispatch } from "react-redux";
-import { setScheduleDate } from "../store/features/drivers";
 import { setSchedule } from "../store/features/schedule";
 
-// import './App.css';
 
 function SelectDate() {
   const dispatch=useDispatch()
@@ -17,7 +15,12 @@ function SelectDate() {
   const dates = [
     { daysFromToday: 1 },
     { daysFromToday: 2 },
-    { daysFromToday: 3 }
+    { daysFromToday: 3 },
+    { daysFromToday: 4 },
+    { daysFromToday: 5 },
+    { daysFromToday: 6 },
+    { daysFromToday: 7 },
+
   ];
 
   return   <div className="bg-white p-6 ">

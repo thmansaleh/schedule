@@ -64,7 +64,8 @@ if(error) return 'error............'
 <Operations workPlace='rta' title='أفراد عمليات RTA' className='relative bg-red-500 text-white  overflow-x-auto'/>
    <Admins/>
 
-   <Holiday shiftOffId={shiftOffId}/>
+   <Holiday  driverData={data}
+ shiftOffId={shiftOffId}/>
    <Notes/> 
 
 

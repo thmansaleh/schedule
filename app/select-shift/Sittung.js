@@ -19,6 +19,10 @@ function Sittung() {
         <input id="color" onChange={e => dispatch(setSchedule({action:'color',data:e.target.value}))} type="color" className="form-input h-8 w-8 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
         <label htmlFor="color" className="ml-2 text-sm text-gray-700">لون خط جدول خبراء السير فقط</label>
     </div>
+    <div className="flex gap-2 items-center">
+        <input id="color" onChange={e => dispatch(setSchedule({action:'random',data:e.target.value}))} type="color" className="form-input h-8 w-8 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+        <label htmlFor="color" className="ml-2 text-sm text-gray-700">ترتيب عشوائي</label>
+    </div>
 </div>
     )
 }

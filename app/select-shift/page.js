@@ -7,11 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import SelectDate from "./SelectDate";
 import Sittung from "./Sittung";
 import BackArrowBtn from "../components/BackArrowBtn";
-export default async function Page(){
+export default  function Page(){
   const router =useRouter()
 
 let shiftId=false
-const {data,error,isLoading} = await shifts()
+const {data,error,isLoading} =  shifts()
 
 
 const nextBtn=()=>{
