@@ -55,11 +55,11 @@ loading.current.style.display='flex'
 
           <div>
             <label htmlFor="email" className="block mb-2 text-sm f text-gray-900 ">اسم المستخدم</label>
-            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600" placeholder="" required />
+            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" placeholder="" required />
           </div>
           <div>
             <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">كلمة المرور</label>
-            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="password" id="password" placeholder="" className="bg-gray-50 border border-gray-300 text-gray-900  block w-full p-2.5 focus:ring-2 focus:outline-none focus:ring-gray-600 rounded-lg" required />
+            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="password" id="password" placeholder="" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" required />
           </div>
 
 

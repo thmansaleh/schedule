@@ -45,7 +45,7 @@ export default function Table({data}) {
         {report.source_name}
         </td>
         <td className="px-6 py-4">
-        {report.type}
+        {report.type_name}
         </td>
         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
         {report.nida}
