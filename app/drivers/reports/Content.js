@@ -1,12 +1,13 @@
 
 'use client'
 import { date } from "@/app/services/date";
-import { getDriverCars } from "@/app/services/getDriverCars";
 import { Button, Datepicker, Spinner } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import InformationModal from "./Modal";
 import BackArrowBtn from "@/app/components/BackArrowBtn";
+import { reports } from "@/app/services/reoprts";
+import Table from "./Table";
 
 export default function Content() {
   const userId=useSearchParams().get('user_id')
@@ -27,12 +28,13 @@ useEffect(() => {
 
   const getCars= async()=>{
     setLoading(true)
-   const data= await getDriverCars(userId,start,end)
+   const data= await reports(start,end,userId)
+   console.log(data)
    setLoading(false)
 
-   console.log(data)
   if(data) {
-    setCars(data)
+    setCars(JSON.parse(data.reports))
+    console.log(JSON.parse(data.reports))
     setMassage(false)
 
   }else{
@@ -60,14 +62,8 @@ setMassage(true)
     <Button onClick={getCars} >عرض</Button>
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
     {massage&&<div className="text-center font-semibold text-gray-700">لا توجد أحداث </div> }
-    {cars&&<div>
-      {cars.map(e=>{
-        
-        return <InformationModal data={e} />
-      })}
-      </div>   
-    }
-
+  
+   {cars&&<Table data={cars}/>}
     
 
   </div>
