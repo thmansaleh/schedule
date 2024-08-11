@@ -3,7 +3,7 @@
 import { date } from "@/app/services/date";
 import { Button, Datepicker, Spinner } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import InformationModal from "./Modal";
 import BackArrowBtn from "@/app/components/BackArrowBtn";
 import Table from "./Table";
@@ -17,19 +17,15 @@ export default function Content() {
   const [start,setStart]=useState(false)
   const [end,setEnd]=useState(false)
 
-useEffect(() => {
-  // console.log(date())
-  setStart(date())
-  setEnd(date())
-  return () => {
-    
-  }
-}, [])
 
   const getReprts= async()=>{
+    if( !start || !end) {
+      setMassage('يرجئ اختيار التاريخ')
+      return null
+    }
+
     setLoading(true)
    const data= await getDriverReports(start,end,userId)
-  //  console.log(userId)
    setLoading(false)
 
   if(data.length>0) {
