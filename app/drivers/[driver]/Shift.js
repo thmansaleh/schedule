@@ -18,7 +18,6 @@ if(error) return 'errore'
 
 
     <select onChange={(e)=>{
-        console.log(e.target.value)
          dispatch(updateDriver({action:'shift',value:e.target.value}))
 
     }} 

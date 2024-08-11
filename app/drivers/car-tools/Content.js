@@ -34,7 +34,6 @@ useEffect(() => {
     const endtDate=endDateObj.toISOString().split('T')[0] 
 
 
-    console.log(startDate,endtDate)
    const data= await getDriverCars(userId,startDate,endtDate)
    setLoading(false)
 

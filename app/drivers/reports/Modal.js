@@ -5,33 +5,43 @@ import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 import Report from "./Report";
 
-export default function InformationModal ({data}) {
+export default function InformationModal ({report}) {
   const [openModal, setOpenModal] = useState(false);
-  const date =new Date(data.date).toLocaleDateString()
+  // const date =new Date(data.date).toLocaleDateString()
 
   return (
     <>
    
-
-        <div onClick={() => setOpenModal(true)} className="flex items-center justify-around border rounded-lg py-2 text-sm text-gray-700 my-3" key={data.id}>
-        {/* {e.nidaa} */}
-        
-        <div>التاريخ :  {date}</div>
-        <div>دورية :  {data.car_id}</div>
-        <div>نداء :  {data.nidaa}</div>
-                </div>
+{/* 
+        <div onClick={() => setOpenModal(true)} className="flex items-center justify-around border rounded-lg py-2 text-sm text-gray-700 my-3" key={data.id}> */}
+        <th onClick={() => setOpenModal(true)} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+<div>        {report.report_no}
+</div>
+        </th>
+       
 
         <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header></Modal.Header>
         <Modal.Body>
-<Report data={data}/>     
+      <div className="space-y-3 text-sm">
+      <div className="text-center font-semibold">رقم الحدث: {report.report_no}</div>
+
+      <div> التاريخ: {new Date(report.date).toLocaleString()}</div>
+          <div> الفترة: {report.period}</div>
+          <div> الدورية: {report.nida}</div>
+          <div>نوع الحدث: {report.report_type}</div>
+          <div>مصدر الحدث: {report.source_name}</div>
+          <div className="flex justify-center items-center text-xs gap-x-4 font-semibold bg-gray-100 rounded-lg py-3 shadow-md">
+          <div>الاستلام: {report.start}</div>
+          <div>الوصول: {report.arrive}</div>
+          <div>الانتهاء: {report.finish}</div>
+          </div>
+          <div>الشارع: {report.street_name}</div>
+          <div>الوصف: {report.description}</div>
+          <div>الملاحظات: {report.note}</div>
+      </div>
    </Modal.Body>
-        {/* <Modal.Footer className="flex gap-x-4">
-          <Button onClick={() => setOpenModal(false)}>تسليم</Button>
-          <Button color="gray" onClick={() => setOpenModal(false)}>
-            الغاء
-          </Button>
-        </Modal.Footer> */}
+    
       </Modal>
     </>
   );

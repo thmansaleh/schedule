@@ -6,19 +6,19 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import InformationModal from "./Modal";
 import BackArrowBtn from "@/app/components/BackArrowBtn";
-import { reports } from "@/app/services/reoprts";
 import Table from "./Table";
+import { getDriverReports } from "@/app/services/getDeriverReports";
 
 export default function Content() {
   const userId=useSearchParams().get('user_id')
-  const [cars,setCars]=useState(false)
+  const [driverReports,setDriverReports]=useState(false)
   const [loading,setLoading]=useState(false)
-  const [massage,setMassage]=useState(false)
+  const [massage,setMassage]=useState('')
   const [start,setStart]=useState(false)
   const [end,setEnd]=useState(false)
 
 useEffect(() => {
-  console.log(date())
+  // console.log(date())
   setStart(date())
   setEnd(date())
   return () => {
@@ -26,21 +26,23 @@ useEffect(() => {
   }
 }, [])
 
-  const getCars= async()=>{
+  const getReprts= async()=>{
     setLoading(true)
-   const data= await reports(start,end,userId)
-   console.log(data)
+   const data= await getDriverReports(start,end,userId)
+  //  console.log(userId)
    setLoading(false)
 
-  if(data) {
-    setCars(JSON.parse(data.reports))
-    console.log(JSON.parse(data.reports))
-    setMassage(false)
+  if(data.length>0) {
+    console.log('from sknkf',data)
+    setDriverReports(data)
+    // console.log(JSON.parse(data.reports))
+    setMassage('')
 
   }else{
-    setCars(false)
+    setDriverReports(false)
+    setMassage('لاتوجد احداث')
 
-setMassage(true)
+// setMassage(true)
   }
 }
   return <>
@@ -59,11 +61,13 @@ setMassage(true)
 
     </div>
 
-    <Button onClick={getCars} >عرض</Button>
+    <Button onClick={getReprts} >عرض</Button>
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
-    {massage&&<div className="text-center font-semibold text-gray-700">لا توجد أحداث </div> }
+    <div className="text-center font-semibold text-gray-700">{massage} </div> 
   
-   {cars&&<Table data={cars}/>}
+   {driverReports&&<Table data={driverReports}/>}
+   {/* <Othman data={driverReports}/> */}
+   {/* <Table data={driverReports}/> */}
     
 
   </div>
