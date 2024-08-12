@@ -12,10 +12,11 @@ export const metadata = {
  // width: '700',
 //}
 
-export default function RootLayout({ children }) {
+export default function
+import { Analytics } from "@vercel/analytics/react" RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      
+      <Analytics/>
       <body className="font-sans pb-16 ">
           <script  src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" />
 
