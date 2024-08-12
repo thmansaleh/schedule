@@ -29,8 +29,8 @@ return <>
 
 
 
-{cars.sort((a, b) => Number(a.name) - Number(b.name)).map((e,i)=>{
-if(e.name!="5"){
+{cars.sort((a, b) => Number(a.nida) - Number(b.nida)).map((e,i)=>{
+if(e.nida!="5"){
 return <tr key={i} className="border-b ">
         <th scope="row" className="px-6 py-4 font-semibold  whitespace-nowra">
           {e.name}
@@ -39,7 +39,7 @@ return <tr key={i} className="border-b ">
           {e.station}
         </td>
         <td className="px-6 py-4">
-     {e.name!="5"&& <a href={e.location} className="inline-block py-2  px-4 text-white bg-black rounded-lg">عرض </a>}
+     {e.nida!="5"&& <a href={e.location} className="inline-block py-2  px-4 text-white bg-black rounded-lg">عرض </a>}
         </td>
         
       </tr>
