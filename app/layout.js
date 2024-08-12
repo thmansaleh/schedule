@@ -2,6 +2,7 @@ import './globals.css'
 import Head from 'next/head'
 import Script from 'next/script'
 import ProviderPage  from './Provider'
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: 'TIMU',
@@ -12,8 +13,7 @@ export const metadata = {
  // width: '700',
 //}
 
-export default function
-import { Analytics } from "@vercel/analytics/react" RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <Analytics/>
