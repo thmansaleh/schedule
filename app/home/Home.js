@@ -55,7 +55,7 @@ route:"./select-shift"
 shadow-lg p-4 hover:mb-4  justify-around flex-col ">
 {e.icon}
 
-    <span className="text-sm font-semibold ">{e.name}</span>
+    <span className="text-sm  ">{e.name}</span>
     
     </Link>
 
