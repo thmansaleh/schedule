@@ -4,8 +4,8 @@ import Script from 'next/script'
 import ProviderPage  from './Provider'
 
 export const metadata = {
-  title: 'store app',
-  description: 'app'
+  title: 'TIMU',
+  description: 'Traffic Incidents Management Unit'
   
 }
 //export const viewport= {
