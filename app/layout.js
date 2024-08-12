@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       
-      <body className="font-sans pb-16 bg-gray-50">
+      <body className="font-sans pb-16 ">
           <script  src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" />
 
         <ProviderPage children={children}/>
