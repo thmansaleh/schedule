@@ -11,7 +11,7 @@ function Report({data}) {
   <div className="flex items-center justify-between">
     <div>
       <span>التاريخ : </span>
-      <span className="text-green-600 font-semibold">{new Date(data.date).toLocaleDateString()}</span>
+      <span className="text-green-600 font-semibold">{data.date}</span>
     </div>
     <div>
       <span>النداء : </span>
