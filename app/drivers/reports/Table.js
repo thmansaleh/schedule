@@ -65,7 +65,9 @@ export default function Table({data}) {
         </td>
         <td className="px-6 py-4">
         {
-          report.date
+new Date(report.date).toLocaleString()
+
+          
         }
         </td>
         <td className="px-6 py-4">
