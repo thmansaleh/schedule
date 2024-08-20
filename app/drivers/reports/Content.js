@@ -38,7 +38,6 @@ export default function Content() {
     setDriverReports(false)
     setMassage('لاتوجد احداث')
 
-// setMassage(true)
   }
 }
   return <>

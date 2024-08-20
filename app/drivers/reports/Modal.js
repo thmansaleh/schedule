@@ -24,21 +24,65 @@ export default function InformationModal ({report}) {
         <Modal.Header></Modal.Header>
         <Modal.Body>
       <div className="space-y-3 text-sm">
-      <div className="text-center font-semibold">رقم الحدث: {report.report_no}</div>
+      <div className="text-center font-semibold">
+        <span className="text-green-500 font-semibold">
 
-      <div> التاريخ: {new Date(report.date).toLocaleString()}</div>
-          <div> الفترة: {report.period}</div>
-          <div> الدورية: {report.nida}</div>
-          <div>نوع الحدث: {report.report_type}</div>
-          <div>مصدر الحدث: {report.source_name}</div>
+        رقم الحدث
+        </span>
+        
+        : {report.report_no}</div>
+
+      <div>
+        <span className="text-green-500 font-semibold">
+
+         التاريخ
+        </span>
+         : {new Date(report.date).toLocaleString()}</div>
+          <div> <span className="text-green-500 font-semibold">الفترة</span>: {report.period}</div>
+          <div> <span className="text-green-500 font-semibold">
+            الدورية
+            </span>
+            : {report.nida}</div>
+            
+          <div>
+            <span className="text-green-500 font-semibold">
+
+            نوع الحدث
+            </span>
+            
+            : {report.report_type}</div>
+          <div>
+            <span className="text-green-500 font-semibold">
+              
+            مصدر الحدث
+            </span>
+            
+            : {report.source_name}</div>
           <div className="flex justify-center items-center text-xs gap-x-4 font-semibold bg-gray-100 rounded-lg py-3 shadow-md">
           <div>الاستلام: {report.start}</div>
           <div>الوصول: {report.arrive}</div>
           <div>الانتهاء: {report.finish}</div>
           </div>
-          <div>الشارع: {report.street_name}</div>
-          <div>الوصف: {report.description}</div>
-          <div>الملاحظات: {report.note}</div>
+          <div>
+            <span className="text-green-500 font-semibold">
+              
+            الشارع
+            </span>
+            
+            : {report.street_name}</div>
+          <div>
+            <span className="text-green-500 font-semibold">
+              
+            الوصف
+            </span>
+            : {report.description}</div>
+          <div>
+            <span className="text-green-500 font-semibold">
+              
+            الملاحظات
+            </span>
+            
+            : {report.note}</div>
       </div>
    </Modal.Body>
     
