@@ -27,7 +27,8 @@ if(isLoading) return <div className="fixed flex items-center justify-center gap-
 
   </div>
 if(error) return 'error............'
-      return <>
+
+if(data)  return <>
 
 <BackArrowBtn/>
 
