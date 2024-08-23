@@ -2,11 +2,12 @@
 'use client'
 import { date } from "@/app/services/date";
 import { getDriverCars } from "@/app/services/getDriverCars";
-import { Button, Datepicker, Spinner } from "flowbite-react";
+import { Button, Datepicker, Spinner, Table } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import InformationModal from "./Modal";
 import BackArrowBtn from "@/app/components/BackArrowBtn";
+import { getDriverCarsHistory } from "@/app/services/getDriverCarsHistory";
 
 export default function Content() {
   const userId=useSearchParams().get('user_id')
@@ -34,7 +35,7 @@ useEffect(() => {
     const endtDate=endDateObj.toISOString().split('T')[0] 
 
 
-   const data= await getDriverCars(userId,startDate,endtDate)
+   const data= await getDriverCarsHistory(userId,startDate,endtDate)
    setLoading(false)
 
   if(data) {
@@ -68,10 +69,53 @@ setMassage(true)
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
     {massage&&<div className="text-center font-semibold text-gray-700">لا توجد اي بيانات</div> }
     {cars&&<div>
-      {cars.map(e=>{
-        
-        return <InformationModal data={e} />
+      <Table className="text-center">
+        <Table.Head >
+          <Table.HeadCell>الدورية</Table.HeadCell>
+          <Table.HeadCell>التمركز</Table.HeadCell>
+          <Table.HeadCell>التاريخ</Table.HeadCell>
+        </Table.Head>
+        <Table.Body className="divide-y">
+        {cars.map(e=>{
+       return   <Table.Row className="bg-white dark:border-gray-700 ">
+       <Table.Cell className=" font-md text-gray-900">
+        {e.nida}
+       </Table.Cell>
+       <Table.Cell>{e.station}</Table.Cell>
+       <Table.Cell>{new Date(e.date).toLocaleString()}</Table.Cell>
+       </Table.Row>
       })}
+ 
+
+            </Table.Body>
+      </Table>
+
+
+      {/* <table class="table-fixed">
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+  {cars.map(e=>{
+       return  <tr>
+       <td>Shining Star</td>
+       <td>Earth, Wind, and Fire</td>
+       <td>1975</td>
+     </tr>
+      })}
+  <tr>
+      <td>Shining Star</td>
+      <td>Earth, Wind, and Fire</td>
+      <td>1975</td>
+    </tr>
+  </tbody>
+</table> */}
+
+     
       </div>   
     }
 

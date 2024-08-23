@@ -10,16 +10,17 @@ import { deleteUserFromCarsHistory } from "../services/deleteUserFromCarsHistory
 
 
 export default function CarModal({car}) {
+  const period=localStorage.getItem('period')
   const [openModal, setOpenModal] = useState(false);
   const [drivers, setDrivers] = useState([]);
   const { data , error, isLoading, } = swrDrivers()
-  const { mutate } = swrPatrols()
+  const { mutate } = swrPatrols(period)
 
   if(error) return 'errore'
 //   if(isLoading) return 'loading'
 
 const serach=(value)=>{
- if(value.length>2){
+ if(value.length>1){
   const newSearch = data.filter(driver => 
     driver.name.toLowerCase().includes(value.toLowerCase()) || 
     driver.phone.toString().includes(value) || 
@@ -33,7 +34,7 @@ const serach=(value)=>{
 const addDriver=async (jobId)=>{
   await addToCarsHistory(car.nida,jobId)
   setOpenModal(false)
-  mutate()
+    mutate()
   setDrivers([])
 
   // console.log(car.name,jobId)
@@ -41,10 +42,9 @@ const addDriver=async (jobId)=>{
 
 
 const deleteDriver=async(jobId)=>{
-  // console.log(id)
  await deleteUserFromCarsHistory(jobId)
- setOpenModal(false)
  mutate()
+ setOpenModal(false)
 
 }
   return (
@@ -62,7 +62,7 @@ const deleteDriver=async(jobId)=>{
 {drivers.length>0?<div className=" rounded-lg p-2 space-y-5">
   {drivers.map(e=>{
     return <div  key={e.job_id+Math.random()} className="flex items-center gap-x-3">
-    <div className="flex-1">{e.name}</div>
+    <div className="flex-1 ">{e.name}</div>
     <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="warning" >
         اضافة
       </Button>

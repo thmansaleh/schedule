@@ -7,9 +7,11 @@ function SingleCar({car}) {
 <CarModal car={car}/>
 <div>
     {car.match_found&&car.drivers.map(driver=>{
-        return <div key={driver.id=Math.random()}> {driver.name}</div>
+        return <div className='text-sm font-semibold ' key={driver.id=Math.random()}> {driver.name}</div>
     })}
 </div>
+{car.match_found&&<div>{car.drivers[0].time}</div>
+}
     </div>
   )
 }

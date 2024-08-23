@@ -15,7 +15,7 @@ const fetcher =async ()=>{
   return response.data
 }
  
-const { data , error, isLoading ,mutate} = useSWR(url,fetcher)
+const { data , error, isLoading , mutate} = useSWR(url,fetcher)
 return {
   data,
   isLoading,

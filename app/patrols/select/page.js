@@ -26,7 +26,7 @@ return <div className='items-center  justify-center flex   fixed inset-0'>
      router.push(`.?period=${period}`)
 
     }else{
-        toast.warning('تم حذف الملاحظة بنجاح', {
+        toast.warning('اختر الفترة', {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
