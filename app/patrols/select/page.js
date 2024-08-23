@@ -1,4 +1,5 @@
 'use client'
+import BackArrowBtn from '@/app/components/BackArrowBtn';
 import { Button, Label, Select } from 'flowbite-react'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
@@ -8,7 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 function page() {
     const [period,setPeriod]=useState(false)
     const router=useRouter()
-return <div className='items-center  justify-center flex   fixed inset-0'>
+return <>
+  <BackArrowBtn/>
+
+<div className='items-center  justify-center flex   fixed inset-0'>
           <ToastContainer/>
           
 
@@ -21,26 +25,27 @@ return <div className='items-center  justify-center flex   fixed inset-0'>
         <option value='الليلية'>الليلية</option>
       </Select>
 <Button onClick={()=>{
-    if(period){
-     localStorage.setItem('period',period)
-     router.push(`.?period=${period}`)
-
-    }else{
-        toast.warning('اختر الفترة', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            rtl:true,
-            progress: undefined,
-            theme: "light"
-      });
-    }
+  if(period){
+    localStorage.setItem('period',period)
+    router.push(`.?period=${period}`)
+    
+  }else{
+    toast.warning('اختر الفترة', {
+      position: "top-center",
+      hideProgressBar: false,
+      closeOnClick: true,
+      autoClose: 3000,
+      pauseOnHover: true,
+      draggable: true,
+      rtl:true,
+      progress: undefined,
+      theme: "light"
+    });
+  }
 }}>التالي</Button>
  </div> 
 </div>
+</>
 }
 
 export default page

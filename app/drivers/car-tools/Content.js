@@ -5,7 +5,6 @@ import { getDriverCars } from "@/app/services/getDriverCars";
 import { Button, Datepicker, Spinner, Table } from "flowbite-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import InformationModal from "./Modal";
 import BackArrowBtn from "@/app/components/BackArrowBtn";
 import { getDriverCarsHistory } from "@/app/services/getDriverCarsHistory";
 
@@ -31,7 +30,7 @@ useEffect(() => {
     startDateObj.setDate(startDateObj.getDate() + 1);
     const startDate=startDateObj.toISOString().split('T')[0] 
     const endDateObj = new Date(end);
-    endDateObj.setDate(endDateObj.getDate() + 1);
+    endDateObj.setDate(endDateObj.getDate() +1);
     const endtDate=endDateObj.toISOString().split('T')[0] 
 
 
@@ -39,8 +38,13 @@ useEffect(() => {
    setLoading(false)
 
   if(data) {
-    setCars(data)
-    setMassage(false)
+    if(data.length>0){
+
+      setCars(data)
+    }else{
+      setMassage('لاتوجد بيانات')
+
+    }
 
   }else{
     setCars(false)
@@ -69,11 +73,12 @@ setMassage(true)
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
     {massage&&<div className="text-center font-semibold text-gray-700">لا توجد اي بيانات</div> }
     {cars&&<div>
-      <Table className="text-center">
+      <Table className="text-center rounded">
         <Table.Head >
-          <Table.HeadCell>الدورية</Table.HeadCell>
-          <Table.HeadCell>التمركز</Table.HeadCell>
-          <Table.HeadCell>التاريخ</Table.HeadCell>
+          <Table.HeadCell className="bg-gray-100">الدورية</Table.HeadCell>
+          <Table.HeadCell className="bg-gray-100">التمركز</Table.HeadCell>
+          <Table.HeadCell className="bg-gray-100">الفترة</Table.HeadCell>
+          <Table.HeadCell className="bg-gray-100">التاريخ</Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
         {cars.map(e=>{
@@ -82,6 +87,7 @@ setMassage(true)
         {e.nida}
        </Table.Cell>
        <Table.Cell>{e.station}</Table.Cell>
+       <Table.Cell>{e.period}</Table.Cell>
        <Table.Cell>{new Date(e.date).toLocaleString()}</Table.Cell>
        </Table.Row>
       })}
@@ -89,32 +95,6 @@ setMassage(true)
 
             </Table.Body>
       </Table>
-
-
-      {/* <table class="table-fixed">
-  <thead>
-    <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-  {cars.map(e=>{
-       return  <tr>
-       <td>Shining Star</td>
-       <td>Earth, Wind, and Fire</td>
-       <td>1975</td>
-     </tr>
-      })}
-  <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
-      <td>1975</td>
-    </tr>
-  </tbody>
-</table> */}
-
      
       </div>   
     }

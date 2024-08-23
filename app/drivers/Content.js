@@ -2,7 +2,6 @@
 
 import Table from "./Table"
 import { swrDrivers} from "@/app/swr/drivers"
-import BackArrowBtn from "../components/BackArrowBtn"
 
 export default  function Content(){
 
@@ -12,7 +11,6 @@ if(isLoading) return <h1 className="text-center mt-8">جاري التحميل...
 if(error) return <h1>error</h1>
 
 if(data) return <>
-<BackArrowBtn/>
 <Table drivers={data} />
 </>
 
