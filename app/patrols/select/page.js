@@ -22,7 +22,7 @@ return <>
         <option  value={false}>الفترة</option>
         <option value='الصباحية'>الصباحية</option>
         <option value='المسائية'>المسائية</option>
-        <option value='الليلية'>الليلية</option>
+        <option  value='الليلية'>الليلية</option>
       </Select>
 <Button onClick={()=>{
   if(period){
@@ -31,7 +31,7 @@ return <>
     
   }else{
     toast.warning('اختر الفترة', {
-      position: "top-center",
+      position: "bottom-center",
       hideProgressBar: false,
       closeOnClick: true,
       autoClose: 3000,
