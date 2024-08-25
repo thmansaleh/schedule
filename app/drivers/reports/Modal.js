@@ -91,7 +91,6 @@ export default function InformationModal ({report}) {
             
             : {report.note}</div>
       </div>
-      </div>
    </Modal.Body>
     
       </Modal>
