@@ -79,7 +79,15 @@ export default function InformationModal ({report}) {
           <div>
             <span className="text-green-500 font-semibold">
               
-            الملاحظات
+            ملاحظات العمليات
+            </span>
+            
+            : {report.note_police}</div>
+      </div>
+          <div>
+            <span className="text-green-500 font-semibold">
+              
+            ملاحظات خبير سير
             </span>
             
             : {report.note}</div>
