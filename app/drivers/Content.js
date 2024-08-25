@@ -9,8 +9,7 @@ export default  function Content(){
 
 const {data,error,isLoading} = swrDrivers()
 
-if(isLoading) return <div className="fixed flex items-center justify-center gap-x-4 inset-0">
-  <h1 className="text-md font-semibold text-gray-700 text-center my-5">جاري التحميل </h1>
+if(isLoading) return <div className="fixed flex items-center justify-center inset-0">
   <Spinner color="success" aria-label="" />
 
   </div>
