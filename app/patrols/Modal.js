@@ -63,8 +63,11 @@ const deleteDriver=async(jobId)=>{
   {drivers.map(e=>{
     return <div  key={e.job_id+Math.random()} className="flex items-center gap-x-3">
     <div className="flex-1 ">{e.name}</div>
+    <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="success" >
+        سائق
+      </Button>
     <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="warning" >
-        اضافة
+        مرافق
       </Button>
   </div>
   })}
