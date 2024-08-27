@@ -31,25 +31,24 @@ const serach=(value)=>{
 
 }
 
-const addDriver=async (jobId)=>{
-  await addToCarsHistory(car.nida,jobId)
+const addDriver=async (jobId,position)=>{
+  await addToCarsHistory(car.car_history_id,car.nida,jobId,position)
   setOpenModal(false)
     mutate()
   setDrivers([])
 
-  // console.log(car.name,jobId)
 }
 
 
-const deleteDriver=async(jobId)=>{
- await deleteUserFromCarsHistory(jobId)
+const deleteDriver=async(position)=>{
+ await deleteUserFromCarsHistory(car.car_history_id,position)
  mutate()
  setOpenModal(false)
 
 }
   return (
     <>
-      <Button  onClick={() => setOpenModal(true)}  className="h-7 w-7  flex justify-center items-center rounded-full " color={car.match_found
+      <Button  onClick={() => setOpenModal(true)}  className="h-7 w-7  flex justify-center items-center rounded-full " color={car.is_match
 ?"success":"warning"}>{car.nida}</Button>
    
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
@@ -63,43 +62,50 @@ const deleteDriver=async(jobId)=>{
   {drivers.map(e=>{
     return <div  key={e.job_id+Math.random()} className="flex items-center gap-x-3">
     <div className="flex-1 ">{e.name}</div>
-    <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="success" >
-        سائق
+
+    <Button  onClick={()=>addDriver(e.job_id,car.is_match?'extraDriver':'mainDriver')} size="xs" color="success" >
+        {car.is_match?'اضافة مرافق':'اضافة سائق'}
       </Button>
-    <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="warning" >
-        مرافق
-      </Button>
+
   </div>
   })}
 </div>:null}
 
 
-{car.match_found?<>
-<div>
-{car.drivers.map(driver=>{
-    return      <div key={driver.job_id+Math.random()}  className="flex items-center gap-x-3">
-    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
-    <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >
+{car.is_match?<div className="space-y-3">
+  <div  className="flex items-center gap-x-3">
+    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">
+    السائق : 
+
+      {car.driver_name}</div>
+    <Button  onClick={()=>deleteDriver('mainDriver')} size="xs" color="failure" >
         حذف
       </Button>
   </div>
-    
-})}
-</div>
 
-</>
-:null
-}
+  {car.extra_driver_name&&  <div  className="flex items-center gap-x-3">
+
+  <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">
+    المرافق:
+    {car.extra_driver_name}
+ 
+  </div>
+  <Button onClick={()=>deleteDriver('extraDriver')} size="xs" color="failure" >
+        حذف
+      </Button>
+  </div>}
+  </div>:null
+  }
 
 
 
 
 </div>
           </Modal.Body>
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button gradientMonochrome="success" onClick={() => setOpenModal(false)}>حفظ</Button>
    
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </>
   );

@@ -2,16 +2,18 @@
 import axios from 'axios';
 //  const url ="https://express-rta.vercel.app/add-car-history"
 const apiUrl='https://express-rta.vercel.app'
-const url =`${apiUrl}/add-car-history`
+const url =`${apiUrl}/add-driver-to-cars-history`
 
-  export const addToCarsHistory= async (nida,jobId,) => {
+  export const addToCarsHistory= async (id,nida,jobId,position) => {
 
     const period =localStorage.getItem('period')
    const response = await axios.get(url,{
      params: {
+      id:id?id:null,
        nida:nida,
        job_id:jobId,
-       period:period
+       period:period,
+       position:position
       } });
    return response.data;
  };

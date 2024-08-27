@@ -55,11 +55,11 @@ return <section className="select-none ">
 
           <div>
             <label htmlFor="email" className="block mb-2 text-sm f text-gray-900 ">اسم المستخدم</label>
-            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" placeholder="" required />
+            <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text"  className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" placeholder=""  />
           </div>
           <div>
             <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">كلمة المرور</label>
-            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="text" name="password" placeholder="****" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" required />
+            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password"  placeholder="****" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5"  />
           </div>
 
 

@@ -6,11 +6,13 @@ function SingleCar({car}) {
     <div className=' w-full py-2 flex items-center gap-x-4'>
 <CarModal car={car}/>
 <div>
-    {car.match_found&&car.drivers.map(driver=>{
+    {/* {car.is_match&&car.drivers.map(driver=>{
         return <div className='text-sm font-semibold ' key={driver.id=Math.random()}> {driver.name}</div>
-    })}
+    })} */}
+{car.is_match?<div>{car.driver_name}</div>:null}
+{car.extra_driver_name?<div>{car.extra_driver_name}</div>:null}
 </div>
-{car.match_found&&<div>{car.drivers[0].time}</div>
+{car.is_match?<div>{new Date(car.date).toLocaleString()}</div>:null
 }
     </div>
   )

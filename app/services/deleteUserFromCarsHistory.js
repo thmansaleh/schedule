@@ -5,13 +5,13 @@ const apiUrl='https://express-rta.vercel.app'
 
 const url =`${apiUrl}/delete-user-from-cars-histpry`
 
-  export const deleteUserFromCarsHistory= async (jobId) => {
-    const period =localStorage.getItem('period')
+  export const deleteUserFromCarsHistory= async (id,position) => {
+    // const period =localStorage.getItem('period')
 
    const response = await axios.get(url,{
      params: {
-        job_id:jobId,
-        period:period,
+        id:id,
+        position:position,
       } });
 // console.log(response.data)
    return response.data;

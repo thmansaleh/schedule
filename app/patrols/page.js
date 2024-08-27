@@ -7,7 +7,6 @@ import BackArrowBtn from "../components/BackArrowBtn"
 function page() {
   const period =useSearchParams().get('period')
   const { data , error, isLoading ,mutate} = swrPatrols(period)
-if(data) console.log(data)
   if(data) return <>
     <BackArrowBtn>
 
@@ -17,7 +16,7 @@ if(data) console.log(data)
 
     <div className="p-3">
 {data.sort((a,b)=>a.nida - b.nida).map(car=>{
-  return <SingleCar key={car.id+Math.random()}   car={car}/>
+ if(car.type=='patrol') return <SingleCar key={car.car_id+Math.random()}   car={car}/>
 })}
     </div>
 </>
