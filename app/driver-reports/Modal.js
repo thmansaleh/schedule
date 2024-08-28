@@ -1,9 +1,10 @@
 
 "use client";
 
-import { Button, Modal } from "flowbite-react";
+import { Button, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
-import Report from "./Report";
+import SearchInput from "../drivers/SearchInput";
+import PlatesModal from "./PlatesModal";
 
 export default function InformationModal ({report}) {
   const [openModal, setOpenModal] = useState(false);
@@ -11,8 +12,6 @@ export default function InformationModal ({report}) {
   return (
     <>
    
-{/* 
-        <div onClick={() => setOpenModal(true)} className="flex items-center justify-around border rounded-lg py-2 text-sm text-gray-700 my-3" key={data.id}> */}
         <th onClick={() => setOpenModal(true)} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 <div>        {report.report_no}
 </div>
@@ -62,6 +61,8 @@ export default function InformationModal ({report}) {
           <div>الوصول: {report.arrive}</div>
           <div>الانتهاء: {report.finish}</div>
           </div>
+
+
           <div>
             <span className="text-green-500 font-semibold">
               
@@ -69,6 +70,40 @@ export default function InformationModal ({report}) {
             </span>
             
             : {report.street_name}</div>
+
+
+          <div className="flex gap-x-3  items-center">
+            <span className="text-green-500 font-semibold">
+              
+            عدد المسارات المغلقة
+            </span>
+            
+            :
+            <TextInput className="w-20"  type="number" />
+            </div>
+
+          <div className="flex gap-x-3  items-center">
+            <span className="text-green-500 font-semibold">
+              
+            مسار توقف المركبة
+            </span>
+            
+            :
+            <TextInput className="w-20"  type="text" />
+            </div>
+          <div className="flex gap-x-3  items-center">
+            <span className="text-green-500 font-semibold">
+              
+            مسار توقف المركبة
+            </span>
+            
+            :
+            <TextInput className="w-20"  type="text" />
+            </div>
+
+
+
+
           <div>
             <span className="text-green-500 font-semibold">
               
@@ -82,16 +117,23 @@ export default function InformationModal ({report}) {
             </span>
             
             : {report.note_police}</div>
-          <div>
+            <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
               
-            ملاحظات خبير السير
+            الملاحظات
             </span>
             
-            : {report.note}</div>
+            :
+            <TextInput className="w-36"  type="text" />
+            </div>
+            <PlatesModal/>
+
       </div>
    </Modal.Body>
-    
+   <Modal.Footer>
+          <Button onClick={() => setOpenModal(false)}>تحديث</Button>
+       
+        </Modal.Footer>
       </Modal>
     </>
   );
