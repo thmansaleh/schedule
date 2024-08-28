@@ -5,10 +5,8 @@ function SingleCar({car}) {
   return (
     <div className=' w-full py-2 flex items-center gap-x-4'>
 <CarModal car={car}/>
-<div>
-    {/* {car.is_match&&car.drivers.map(driver=>{
-        return <div className='text-sm  ' key={driver.id=Math.random()}> {driver.name}</div>
-    })} */}
+<div className='flex-1'>
+
 {car.is_match?<div className='text-sm  '>{car.driver_name}</div>:null}
 {car.extra_driver_name?<div className='text-sm  '>{car.extra_driver_name}</div>:null}
 </div>
