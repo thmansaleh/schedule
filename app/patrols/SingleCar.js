@@ -3,7 +3,7 @@ import CarModal from './Modal'
 
 function SingleCar({car}) {
   return (
-    <div className=' w-full py-2 flex items-center gap-x-4 border-b'>
+    <div className={car.is_match?' w-full py-2 flex items-center gap-x-4 border-b':' w-full py-2 flex items-center gap-x-4'}>
 <CarModal car={car}/>
 <div className='flex-1'>
 
