@@ -1,12 +1,20 @@
 
 "use client";
 
-import { Button, Modal, TextInput } from "flowbite-react";
+import { Button, Label, Modal, Radio, TextInput } from "flowbite-react";
 import { useState } from "react";
+import { addPlate } from "../services/addPlate";
 
 export default function PlatesModal ({report}) {
   const [openModal, setOpenModal] = useState(false);
+  const [plateNo, setPlateNo] = useState('');
+  const [plateSource, setPlateSource] = useState('');
+  const [removed, setRemoved] = useState(false);
 
+const add=async ()=>{
+  const data=await addPlate(report.report_no,plateNo,plateSource,removed)
+  setOpenModal(false)
+}
   return (
     <>
    
@@ -20,20 +28,14 @@ export default function PlatesModal ({report}) {
         <Modal.Header></Modal.Header>
         <Modal.Body>
       <div className="space-y-3 text-sm">
-
-
-   
-
-
-
-          <div className="flex gap-x-3  items-center">
+           <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
               
             رقم المركبة
             </span>
             
             :
-            <TextInput className="w-20"  type="text" />
+            <TextInput onChange={e=>setPlateNo(e.target.value)} className="w-28"  type="text" />
             </div>
           <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
@@ -41,14 +43,27 @@ export default function PlatesModal ({report}) {
 مصدر  اللوحة            </span>
             
             :
-            <TextInput className="w-20"  type="text" />
+            <TextInput onChange={e=>setPlateSource(e.target.value)} className="w-28"  type="text" />
             </div>
 
-
+            <fieldset className="flex max-w-md flex-col gap-4">
+      <legend onChange={e=>setRemoved(e.target.value)} className="mb-4 text-green-500 font-semibold">تم الإزاحة بواسطة الكرين؟</legend>
+   
+      <div className="flex items-center gap-2">
+        <Radio id="germany" name="countries" value='true' />
+        <Label htmlFor="germany">نعم</Label>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio id="true" name="countries" value='false' />
+        <Label htmlFor="germany">لا</Label>
+      </div>
+     
+  
+    </fieldset>
       </div>
    </Modal.Body>
    <Modal.Footer>
-          <Button onClick={() => setOpenModal(false)}>اضافة</Button>
+          <Button onClick={add}>اضافة</Button>
        
         </Modal.Footer>
       </Modal>

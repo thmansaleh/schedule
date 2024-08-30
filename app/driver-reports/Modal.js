@@ -5,10 +5,20 @@ import { Button, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
 import SearchInput from "../drivers/SearchInput";
 import PlatesModal from "./PlatesModal";
+import { updateReport } from "../services/updateReport";
+import Plates from "./Plates";
 
 export default function InformationModal ({report}) {
   const [openModal, setOpenModal] = useState(false);
-
+  // const [streetId, setStreetId] = useState('');
+  const [carStopLine, setCarStopLine] = useState('');
+  const [closeLinesCount, setCloseLinesCount] = useState('');
+  const [description, setDescription] = useState(report.description);
+  const [note, setNote] = useState('');
+const update=async()=>{
+  const data = await updateReport(report.id,carStopLine,closeLinesCount,description,note)
+  console.log(report.id,carStopLine,closeLinesCount,description,note)
+}
   return (
     <>
    
@@ -79,9 +89,10 @@ export default function InformationModal ({report}) {
             </span>
             
             :
-            <TextInput className="w-20"  type="number" />
+            <TextInput onChange={e=>setCloseLinesCount(e.target.value)} className="w-20"  type="number" />
             </div>
 
+     
           <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
               
@@ -89,34 +100,30 @@ export default function InformationModal ({report}) {
             </span>
             
             :
-            <TextInput className="w-20"  type="text" />
-            </div>
-          <div className="flex gap-x-3  items-center">
-            <span className="text-green-500 font-semibold">
-              
-            مسار توقف المركبة
-            </span>
-            
-            :
-            <TextInput className="w-20"  type="text" />
+            <TextInput onChange={e=>setCarStopLine(e.target.value)} className="w-20"  type="text" />
             </div>
 
 
-
-
-          <div>
+            <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
               
             الوصف
             </span>
-            : {report.description}</div>
+            
+            :
+            <TextInput defaultValue={description} onChange={e=>setDescription(e.target.value)} className="w-full"  type="text" />
+            </div>
+
+        
           <div>
             <span className="text-green-500 font-semibold">
               
             ملاحظات العمليات
             </span>
             
-            : {report.note_police}</div>
+            : {report.note_police}
+            </div>
+            
             <div className="flex gap-x-3  items-center">
             <span className="text-green-500 font-semibold">
               
@@ -124,14 +131,15 @@ export default function InformationModal ({report}) {
             </span>
             
             :
-            <TextInput className="w-36"  type="text" />
+            <TextInput onChange={e=>setNote(e.target.value)} className="w-36"  type="text" />
             </div>
-            <PlatesModal/>
+            <Plates reportNo={report.report_no}/>
+            <PlatesModal report={report}/>
 
       </div>
    </Modal.Body>
    <Modal.Footer>
-          <Button onClick={() => setOpenModal(false)}>تحديث</Button>
+          <Button onClick={update}>تحديث</Button>
        
         </Modal.Footer>
       </Modal>

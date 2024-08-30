@@ -2,7 +2,7 @@ import { swrDriverReports } from "../swr/driverReports"
 import Table from "./Table"
 
 function Reports({jobId}) {
-    const { data , error, isLoading } = swrDriverReports(jobId)
+    const { data , isLoading } = swrDriverReports(jobId)
 if(isLoading) return 'جاري التحميل....'
  if(data) {
     if(data.length==0) return <div className="fixed inset-0 flex justify-center items-center">
