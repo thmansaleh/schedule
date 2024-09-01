@@ -17,7 +17,6 @@ export default function CarModal({car}) {
   const { mutate } = swrPatrols(period)
 
   if(error) return 'errore'
-//   if(isLoading) return 'loading'
 
 const serach=(value)=>{
  if(value.length>1){
