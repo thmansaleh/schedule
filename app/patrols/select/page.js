@@ -24,7 +24,7 @@ return <>
         <option value='المسائية'>المسائية</option>
         <option  value='الليلية'>الليلية</option>
       </Select>
-<Button onClick={()=>{
+<Button gradientMonochrome="success" onClick={()=>{
   if(period){
     localStorage.setItem('period',period)
     router.push(`.?period=${period}`)

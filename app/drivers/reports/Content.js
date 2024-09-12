@@ -56,7 +56,7 @@ export default function Content() {
 
     </div>
 
-    <Button onClick={getReprts} >عرض</Button>
+    <Button gradientMonochrome="success" onClick={getReprts} >عرض</Button>
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
     <div className="text-center font-semibold text-gray-700">{massage} </div> 
   

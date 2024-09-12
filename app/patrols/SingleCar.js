@@ -10,7 +10,7 @@ function SingleCar({car}) {
 {car.is_match?<div className='text-sm  '>{car.driver_name}</div>:null}
 {car.extra_driver_name?<div className='text-sm  '>{car.extra_driver_name}</div>:null}
 </div>
-{car.is_match?<div className='text-sm bg-blue-400 p-1 text-white rounded  '>{new Date(car.date).toLocaleTimeString()}</div>:null
+{car.is_match?<div className='text-sm p-1 text-black   '>{new Date(car.date).toLocaleTimeString()}</div>:null
 }
     </div>
   )

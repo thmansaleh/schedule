@@ -69,7 +69,7 @@ setMassage(true)
 
     </div>
 
-    <Button onClick={getCars} >عرض</Button>
+    <Button gradientMonochrome="success" onClick={getCars} >عرض</Button>
     {loading&&<div className="flex justify-center"><Spinner aria-label="Default status example" /></div>}
     {massage&&<div className="text-center font-semibold text-gray-700">لا توجد اي بيانات</div> }
     {cars&&<div>
