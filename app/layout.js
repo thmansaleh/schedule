@@ -9,6 +9,10 @@ export const metadata = {
   description: 'Traffic Incidents Management Unit'
   
 }
+export const viewport = {
+  userScalable: false
+}
+
 //export const viewport= {
  // width: '700',
 //}
