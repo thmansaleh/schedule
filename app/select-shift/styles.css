@@ -1,0 +1,8 @@
+.shift:checked + label >svg {
+    opacity: 1
+  }
+  
+  .shift:checked+label {
+    background: black;
+    color: black
+  }

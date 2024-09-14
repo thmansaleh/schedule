@@ -1,6 +1,11 @@
 export const viewport ={
-width:'800'
+width:'800',
+userScalable: true
+
 }
+// export const viewport = {
+//   userScalable: false
+// }
 
 import { redirect } from 'next/navigation'
 import Content from "./Content"

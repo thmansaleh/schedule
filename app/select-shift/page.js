@@ -1,5 +1,5 @@
 "use client"
-
+import './styles.css'
 import {shifts} from "@/app/swr/shifts"
 import { useRouter } from "next/navigation"
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import SelectDate from "./SelectDate";
 import Sittung from "./Sittung";
 import BackArrowBtn from "../components/BackArrowBtn";
+import Phones from './Phones';
+import Borders from './Borders';
 export default  function Page(){
   const router =useRouter()
 
@@ -90,6 +92,10 @@ theme="light"
   </div>
  
 <SelectDate/>
+<div className='space-y-4 p-3'>
+<Phones/>
+<Borders/>
+</div>
 <Sittung/>
 <button className="my-4 w-3/4 py-2 font-semibold text-white bg-green-600 rounded-lg" id="nextbtn" onClick={nextBtn}
 >
