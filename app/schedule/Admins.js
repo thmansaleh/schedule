@@ -81,7 +81,7 @@ setDuty([...duty])
         <select onChange={(e)=>addAdmin(e.target.value,dutyIndex)} className=" text-black opacity-0 absolute top-0 left-0 bottom-0 right-0">
               <option></option>
            {admins.map((e,i)=>{
-
+console.log(e.name)
 
             if(e.isAvilable&&e.status=="true") return <option key={i} value={i}>{e.name}</option>
 

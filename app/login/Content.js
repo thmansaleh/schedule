@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import axios from 'axios';
 import { useState ,useRef} from 'react';
 import {email} from "@/app/services/email"
+import { Button } from 'flowbite-react';
 
 export default function(){
   const router = useRouter()
@@ -73,7 +74,7 @@ return <section className="select-none ">
 
 
           <span ref={errorMsg}  className="text-sm text-red-600 my-2 inline-block "></span>
-          <button onClick={()=>login()} type="submit" className="w-full text-white bg-gray-600 00  rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
+          <Button gradientMonochrome="success" onClick={()=>login()} type="submit" className='w-full'>تسجيل الدخول</Button>
 
       </div>
     </div>

@@ -3,9 +3,10 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 export function operations(){
- const url ="https://express-rta.vercel.app/get-operations"
+ const url =`${apiUrl}/get-operations`
   const fetchProduct = async () => {
    const response = await axios.get(url);
 

@@ -3,9 +3,9 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 export function swrReportPlates(reportNo){
-    const apiUrl='https://express-rta.vercel.app'
     const url =`${apiUrl}/report-plates?report_no=${reportNo}`
   const fetcher = async () => {
    const response = await axios.get(url);

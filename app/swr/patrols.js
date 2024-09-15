@@ -2,9 +2,10 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 export  function swrPatrols(period){
-  const apiUrl='https://express-rta.vercel.app'
+
 
 
 //  const url =`https://express-rta.vercel.app/operations-cars?period=${period}`

@@ -1,7 +1,7 @@
 
 import axios from 'axios';
+import { apiUrl } from '../constants';
 //  const url ="https://express-rta.vercel.app/delete-user-from-cars-histpry"
-const apiUrl='https://express-rta.vercel.app'
 
 const url =`${apiUrl}/delete-user-from-cars-histpry`
 

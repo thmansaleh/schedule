@@ -3,11 +3,12 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 
 export  function swrNotes(userId){
 
- const url =`https://express-rta.vercel.app/get-notes-by-user-id?user_id=${userId}`
+ const url =`${apiUrl}/get-notes-by-user-id?user_id=${userId}`
   
 const fetcher =async ()=>{
   const response = await axios.get(url)

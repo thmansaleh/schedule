@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-const apiUrl='https://express-rta.vercel.app'
+import { apiUrl } from '../constants';
 const url =`${apiUrl}/add-driver-to-cars-history`
 
   export const addToCarsHistory= async (id,nida,jobId,position) => {

@@ -3,11 +3,12 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 
 export  function swrCars(){
 
- const url ="https://express-rta.vercel.app/get-cars"
+ const url =`${apiUrl}/get-cars`
 //  const url ="https://saba.cc/schedule/cars.php"
   
 const fetcher =async ()=>{
